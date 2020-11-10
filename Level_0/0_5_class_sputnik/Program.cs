@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Timers;
@@ -44,11 +45,13 @@ namespace _0_5_class_satellite
             if (IsFly)
             {
                 Console.WriteLine($"{Name} has already been launched!");
+                Logger.WriteToLog($"{Name} has already been launched!");
             }
             else
             {
                 IsFly = true;
                 Console.WriteLine($"{Name} launched!");
+                Logger.WriteToLog($"{Name} launched!");
             }
 
         }
@@ -69,12 +72,13 @@ namespace _0_5_class_satellite
             if (IsFly == false)
             {
                 Console.WriteLine($"{Name} is already on Mars!");
+                Logger.WriteToLog($"{Name} is already on Mars!");
             }
             else
             {
                 IsFly = false;
                 Console.WriteLine($"{Name} is landing!");
-
+                Logger.WriteToLog($"{Name} is landing!");
             }
         }
 
@@ -346,6 +350,23 @@ namespace _0_5_class_satellite
 
 }
 
+static class Logger
+{
+    public static string path = @"C:\Users\Admin\Desktop\logstarlink.txt";
+
+
+    public static void WriteToLog(string str)
+    {
+        using (FileStream fstream = new FileStream($"{path}", FileMode.Append))
+        {
+
+            byte[] array = System.Text.Encoding.Default.GetBytes(str + "\n");
+            fstream.Write(array, 0, array.Length);
+            Console.WriteLine("Лог добавлен!");
+        }
+    }
+}
+
 
 // класс МКС, к которому мы можем присоединять и отсоединять спутники а также получить количество подсоединённых спутников
 // метод коннект и дисконнект
@@ -354,4 +375,4 @@ namespace _0_5_class_satellite
 
 // реализуем два интерфейса для Ship и для Самолёты, в каждом реализуем метод Коннект
 
-    // коннект должен присоединять что-то к мкс(самолёт или спутник)
+// коннект должен присоединять что-то к мкс(самолёт или спутник)
