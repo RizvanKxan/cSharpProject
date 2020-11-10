@@ -8,6 +8,7 @@
 *.suo
 *.user
 *.sln.docstates
+*.lock
 
 # Build results
 [Dd]ebug/
