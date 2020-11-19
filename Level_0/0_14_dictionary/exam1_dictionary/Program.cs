@@ -11,30 +11,30 @@ namespace exam1_dictionary
         static void Main()
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
-            Dictionary<string, Word> rusEng = new Dictionary<string, Word>
-            {
-                { "null", null }
-            };
+            Dictionary<string, Word> rusEng = new Dictionary<string, Word> { { "null", null } };
+            
+            Dictionary<string, Word> engRus = new Dictionary<string, Word> { { "null", null } };
             short choiceTypeDictionary = 0;
-            while (choiceTypeDictionary != 3)
+            while (true)
             {
 
                 Console.Clear();
                 Print.SelectTypeMenu();
+                
                 if ((!short.TryParse(Console.ReadLine(), out choiceTypeDictionary) || ((choiceTypeDictionary <= 0) || (choiceTypeDictionary > 3))))
                 {
                     Print.DataIsIncorrect();
                     Console.ReadKey();
                 }
                 else
-                {
 
-                    while (true)
-                    {
-                        Console.Clear();
-                        switch (choiceTypeDictionary)
-                        {
-                            case 1:
+                {// происходит затирание словаря, разобраться..
+                    Dictionary<string, Word> workDictionary = new Dictionary<string, Word> { { "null", null } };
+                    if (choiceTypeDictionary == 3) { break; }
+                    if (choiceTypeDictionary == 1) { workDictionary = rusEng; }
+                    else { workDictionary = engRus; }
+                    Console.Clear();
+
                                 short choiceActionInDictionary = 0;
                                 while (choiceActionInDictionary != 8)
                                 {
@@ -61,26 +61,26 @@ namespace exam1_dictionary
                                                                                 
                                             break;
                                             case 2: // 2. Перевести слово или выражение.
-                                            // проверка есть ли в словаре хоть один ключ
-                                                if(rusEng.ContainsKey("null"))
-                                                {
-                                                    Print.DictionaryEmpty();
-                                                    Console.ReadKey();
-                                                    
-                                                }
+                                                    // проверка есть ли в словаре хоть один ключ
+                                            if (workDictionary.ContainsKey("null"))
+                                            {
+                                                Print.DictionaryEmpty();
+                                                Console.ReadKey();
+
+                                            }
                                                 else
                                                 {
                                                     string strToTranslate;
                                                     Console.Write("Введите слово или фразу для которого хотите найти перевод: ");
                                                     strToTranslate = Console.ReadLine();
-                                                    if ((strToTranslate.Trim() == "") || (rusEng.ContainsKey(strToTranslate)))
+                                                    if ((strToTranslate.Trim() == "") || (workDictionary.ContainsKey(strToTranslate)))
                                                     {
                                                         Console.Clear();
                                                         Console.WriteLine("**********************************");
                                                         Console.WriteLine($"Перевод слова или выражения <<{strToTranslate}>>: ");
                                                         Console.WriteLine("**********************************");
                                                         Console.WriteLine();
-                                                        foreach(var v in rusEng[strToTranslate].values)
+                                                        foreach(var v in workDictionary[strToTranslate].values)
                                                         {
                                                             Console.WriteLine(v);
                                                         }
@@ -94,7 +94,7 @@ namespace exam1_dictionary
                                                 Console.Clear();
                                                 Console.Write("Введите слово или фразу для которого хотите добавить перевод: ");
                                                 str = Console.ReadLine();
-                                                if ((str.Trim() == "") || (rusEng.ContainsKey(str)))
+                                                if ((str.Trim() == "") || (workDictionary.ContainsKey(str)))
                                                 {
                                                     Console.Clear();
                                                     Console.WriteLine("******************************************************************");
@@ -146,8 +146,8 @@ namespace exam1_dictionary
                                                         }
                                                         if(!isEmpty)
                                                         {
-                                                            rusEng.Remove("null");
-                                                            rusEng.Add(str, new Word(strTranslate));
+                                                            workDictionary.Remove("null");
+                                                            workDictionary.Add(str, new Word(strTranslate));
                                                         }
                                                         else
                                                         {
@@ -160,7 +160,7 @@ namespace exam1_dictionary
                                                 }                                            
                                             break;
                                             case 4: // 4. Добавить новый перевод. 
-                                                if(rusEng.ContainsKey("null"))
+                                                if(workDictionary.ContainsKey("null"))
                                                 {
                                                     Print.DictionaryEmpty();
                                                     Console.ReadKey();
@@ -171,14 +171,14 @@ namespace exam1_dictionary
                                                 Console.Clear();
                                                 Console.Write("Введите слово(выражение), перевод к которому нужно добавить: ");
                                                 strAddTranslate = Console.ReadLine();
-                                                if ((strAddTranslate.Trim() != "") && (rusEng.ContainsKey(strAddTranslate)) && (CheckLanguageString(strAddTranslate) == "Russian"))
+                                                if ((strAddTranslate.Trim() != "") && (workDictionary.ContainsKey(strAddTranslate)) && (CheckLanguageString(strAddTranslate) == "Russian"))
                                                 {
                                                     Console.Clear();
                                                     Console.Write("Введите новый перевод: ");
                                                     string tempWord = Console.ReadLine();
                                                     if ((tempWord.Trim() != "")  && (CheckLanguageString(tempWord) == "English"))
                                                     {
-                                                        rusEng[strAddTranslate].values.Add(tempWord);
+                                                        workDictionary[strAddTranslate].values.Add(tempWord);
                                                         Console.WriteLine("Перевод успешно добавлен!");
                                                     }
                                                     else
@@ -195,7 +195,7 @@ namespace exam1_dictionary
                                             case 5: // 5. Изменить перевод.
                                             break;
                                             case 6: // 6. Удалить перевод.
-                                                if(rusEng.ContainsKey("null"))
+                                                if(workDictionary.ContainsKey("null"))
                                                 {
                                                     Print.DictionaryEmpty();
                                                     Console.ReadKey();
@@ -204,13 +204,13 @@ namespace exam1_dictionary
                                                 string strRemove;
                                                 Console.Write("Введите слово(выражение), перевод к которому нужно удалить: ");
                                                 strRemove = Console.ReadLine();
-                                                if ((strRemove.Trim() != "") && (rusEng.ContainsKey(strRemove)) && (CheckLanguageString(strRemove) == "Russian"))
+                                                if ((strRemove.Trim() != "") && (workDictionary.ContainsKey(strRemove)) && (CheckLanguageString(strRemove) == "Russian"))
                                                 {
                                                     Console.Write("Напишите перевод который надо удалить: ");
                                                     string tempWord = Console.ReadLine();
                                                     if ((tempWord.Trim() != "") && (CheckLanguageString(tempWord) == "English"))
                                                     {
-                                                        rusEng[strRemove].values.Remove(tempWord);
+                                                        workDictionary[strRemove].values.Remove(tempWord);
                                                         Console.WriteLine("Слово успешно удалено!");
                                                     }
                                                     else
@@ -226,7 +226,7 @@ namespace exam1_dictionary
                                                 Console.ReadKey();
                                             break;
                                             case 7: // 7. Показать все слова в словаре.
-                                            if(rusEng.ContainsKey("null"))
+                                            if(workDictionary.ContainsKey("null"))
                                                 {
                                                     Print.DictionaryEmpty();
                                                 }
@@ -236,7 +236,7 @@ namespace exam1_dictionary
                                                 Console.WriteLine("**********************************");
                                                 Console.WriteLine("Все слова:");
                                                 Console.WriteLine("**********************************");
-                                                foreach (var elem in rusEng)
+                                                foreach (var elem in workDictionary)
                                                 {
                                                     Console.Write(elem.Key + ":");
                                                     Console.WriteLine();
@@ -254,24 +254,18 @@ namespace exam1_dictionary
                                             default:
                                             break;
                                         }
-                                        
-                                    }
-                                }
                                 
+                                    }
 
-                                Console.WriteLine();
+                                 
+                                }
+                    if (choiceTypeDictionary == 1) { rusEng = workDictionary; }
+                    else { engRus = workDictionary; }
+                    workDictionary.Clear();
 
-                                //Console.ReadKey();
-                                break;
-                            case 2:
-                                break;
-                            case 3:
-                                break;
-                            case 4:
-                                break;
-                        }
-                        break;
-                    }
+                    Console.WriteLine();
+
+
                 }
             }
 
