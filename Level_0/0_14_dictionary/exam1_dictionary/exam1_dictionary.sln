@@ -1,9 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
+# Visual Studio 2012
+# SharpDevelop 5.0
 VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exam1_dictionary", "exam1_dictionary.csproj", "{747CC876-6DBA-444C-953D-76482F13DF33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "G:\1231231\test\test.csproj", "{316437A9-611B-467D-AF33-467DD59FB7F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +18,10 @@ Global
 		{747CC876-6DBA-444C-953D-76482F13DF33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{747CC876-6DBA-444C-953D-76482F13DF33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{747CC876-6DBA-444C-953D-76482F13DF33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{316437A9-611B-467D-AF33-467DD59FB7F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{316437A9-611B-467D-AF33-467DD59FB7F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{316437A9-611B-467D-AF33-467DD59FB7F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{316437A9-611B-467D-AF33-467DD59FB7F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

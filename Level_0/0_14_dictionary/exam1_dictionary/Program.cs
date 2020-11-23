@@ -36,7 +36,7 @@ namespace exam1_dictionary
                     }
                     if (choiceTypeDictionary == 1)
                     {
-                        workDictionary = ref rusEng;
+                        workDictionary = ref rusjEng;
                     }
                     else
                     {
@@ -513,3 +513,7 @@ namespace exam1_dictionary
         }
     }
 }
+
+
+
+
