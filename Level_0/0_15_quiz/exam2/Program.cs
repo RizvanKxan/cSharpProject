@@ -12,6 +12,12 @@ namespace _0_15_quiz
         {
 
             Dictionary<string, PersonData> users = new Dictionary<string, PersonData>() { { "1", new PersonData("2") } };
+            List<Dictionary<string, Answer>> topics = new List<Dictionary<string, Answer>>();
+            Dictionary<string, Answer> cSharp = new Dictionary<string, Answer>();
+            //Dictionary<string,Answer> python = new Dictionary<string,Answer>();
+            cSharp.Add("Какого типа данных нет в c#.", new Answer("ubyte", true));
+            //python.Add("питон_вопрос", new Answer("питон_ответ", true));
+            topics.Add(cSharp);
             short choiceMainMenu;
             string activeUserLogin = "";
             do
@@ -67,6 +73,7 @@ namespace _0_15_quiz
                             Print.QuizMenu();
                             if ((!short.TryParse(Console.ReadLine(), out choiceQuizMenu) || (choiceQuizMenu <= 0) || (choiceQuizMenu > 5)))
                             {
+                                Console.Clear();
                                 Print.DataIsIncorrect();
                                 Console.ReadKey();
                             }
@@ -75,6 +82,51 @@ namespace _0_15_quiz
                                 switch (choiceQuizMenu)
                                 {
                                     case 1: // Начать новую викторину. 
+                                        short choiceTheme = 0;
+                                        do
+                                        {
+                                            Console.Clear();
+                                            Print.ThemeSelection();
+                                            if ((!short.TryParse(Console.ReadLine(), out choiceTheme)) || (choiceTheme <= 0) || (choiceTheme > 6))
+                                            {
+                                                Print.DataIsIncorrect();
+                                                Console.ReadKey();
+                                            }
+                                            else
+                                            {
+                                                switch (choiceTheme)
+                                                {
+                                                    case 1:
+                                                        foreach (Dictionary<string, Answer> item in topics)
+                                                        {
+
+                                                            foreach (var it in item)
+                                                            {
+                                                                Console.WriteLine(it.Key);
+                                                                foreach (var i in it.Value.answerOptionsFalseAndTrue)
+                                                                {
+                                                                    Console.WriteLine(i + " test");
+                                                                }
+
+                                                            }
+
+                                                        }
+                                                        Console.ReadKey();
+                                                        break;
+                                                    case 2:
+                                                        break;
+                                                    case 3:
+                                                        break;
+                                                    case 4:
+                                                        break;
+                                                    case 5:
+                                                        break;
+
+                                                    default:
+                                                        break;
+                                                }
+                                            }
+                                        } while (choiceTheme != 6);
                                         break;
                                     case 2: // Посмотреть результаты прошлых викторин.
                                         break;
@@ -263,11 +315,18 @@ namespace _0_15_quiz
             Console.WriteLine("*******************************************");
             Console.Write("Ваш выбор: ");
         }
-        public static void engTypeDictionary()
+        public static void ThemeSelection()
         {
-            Console.WriteLine("-------------------------------------------");
-            Console.WriteLine("Тип словаря: Английско - Русский.         |");
-            Console.WriteLine("-------------------------------------------");
+            Console.WriteLine("*******************************************");
+            Console.WriteLine("*Выберите тему викторины:                 |");
+            Console.WriteLine("1. С#.                                    |");
+            Console.WriteLine("2. Python.                                |");
+            Console.WriteLine("3. HTML.                                  |");
+            Console.WriteLine("4. CSS.                                   |");
+            Console.WriteLine("5. Тестирование ПО.                       |");
+            Console.WriteLine("6. Выход.                                 |");
+            Console.WriteLine("*******************************************");
+            Console.Write("Ваш выбор: ");
         }
     }
 
@@ -287,6 +346,28 @@ namespace _0_15_quiz
             this.password = password;
             this.dateOfBirth = "";
         }
+    }
+
+    public class Answer
+    {
+        public List<string> answerOptionsTrue = new List<string>();
+        public List<string> answerOptionsFalse = new List<string>();
+        public List<string> answerOptionsFalseAndTrue = new List<string>();
+
+        public Answer(string str, bool b)
+        {
+            answerOptionsFalseAndTrue.Add(str);
+            if (b)
+            {
+                answerOptionsTrue.Add(str);
+            }
+            else
+            {
+                answerOptionsFalse.Add(str);
+            }
+
+        }
+
     }
 }
 
