@@ -84,9 +84,8 @@ namespace exam1_dictionary
                                         }
                                         else
                                         {
-                                            //исключение
-                                            //string json = JsonConvert.SerializeObject(rusEng, Formatting.Indented);
-                                            //File.WriteAllText(pathRusEng, json);
+                                            string json = JsonConvert.SerializeObject(rusEng, Formatting.Indented);
+                                            File.WriteAllText(pathRusEng, json);
 
                                             Console.WriteLine("*********************************************");
                                             Console.WriteLine("Словарь создан.                             |");
@@ -98,10 +97,30 @@ namespace exam1_dictionary
                                     else
                                     {
                                         Print.engTypeDictionary();
-                                    }
-                                    // добавить проверку: если существует файл, значит словарь существует
-                                    // иначе создать новый файл и создать новый словарь
-                                    
+                                        if (File.Exists(pathEngRus))
+                                        {
+                                            string json = File.ReadAllText(pathEngRus);
+                                            engRus = JsonConvert.DeserializeObject<Dictionary<string, Word>>(json);
+
+                                            Console.WriteLine("*********************************************");
+                                            Console.WriteLine("Словарь уже существует.                     |");
+                                            Console.WriteLine("Для выхода нажмите любую клавишу...         |");
+                                            Console.WriteLine("*********************************************");
+                                            Console.ReadKey();
+
+                                        }
+                                        else
+                                        {
+                                            string json = JsonConvert.SerializeObject(engRus, Formatting.Indented);
+                                            File.WriteAllText(pathEngRus, json);
+
+                                            Console.WriteLine("*********************************************");
+                                            Console.WriteLine("Словарь создан.                             |");
+                                            Console.WriteLine("Для выхода нажмите любую клавишу...         |");
+                                            Console.WriteLine("*********************************************");
+                                            Console.ReadKey();
+                                        }
+                                    }                                   
 
                                     break;
                                 case 2: // 2. Перевести слово или выражение.
@@ -537,7 +556,6 @@ namespace exam1_dictionary
         }
     }
 
-    [Serializable]
     public class Word
     {
         public List<string> values = new List<string>();
@@ -545,6 +563,7 @@ namespace exam1_dictionary
         {
             values.Add(str);
         }
+
         public Word(List<string> str1)
         {
             foreach (var item in str1)
@@ -552,6 +571,12 @@ namespace exam1_dictionary
                 values.Add(item);
             }
         }
+
+        public Word()
+        {
+
+        }
+
     }
 }
 
