@@ -12,12 +12,34 @@ namespace _0_15_quiz
         {
 
             Dictionary<string, PersonData> users = new Dictionary<string, PersonData>() { { "1", new PersonData("2") } };
-            List<Dictionary<string, Answer>> topics = new List<Dictionary<string, Answer>>();
-            Dictionary<string, Answer> cSharp = new Dictionary<string, Answer>();
-            //Dictionary<string,Answer> python = new Dictionary<string,Answer>();
-            cSharp.Add("Какого типа данных нет в c#.", new Answer("ubyte", true));
-            //python.Add("питон_вопрос", new Answer("питон_ответ", true));
-            topics.Add(cSharp);
+
+            Dictionary<int, QuestionAnswer> cSharp = new Dictionary<int, QuestionAnswer>
+            {
+                {
+                    1, new QuestionAnswer
+                    ("Какого типа данных нет в c#.", new Dictionary<string, bool>
+                        {
+                        {"ubyte" , true},
+                        {"int" , false},
+                        {"bite", false},
+                        {"long", false}
+                        } 
+                    )
+                },
+                {
+                    2, new QuestionAnswer
+                    ("Tuple это...", new Dictionary<string, bool>
+                        {
+                        {"черепаха" , false},
+                        {"кортёж" , true},
+                        {"вояж", false},
+                        {"рекурсивная функция", false}
+                        } 
+                    )
+                }
+            };
+            //python.Add("питон_вопрос", new QuestionAnswer("питон_ответ", true));
+            //topics.Add(cSharp);
             short choiceMainMenu;
             string activeUserLogin = "";
             do
@@ -97,20 +119,58 @@ namespace _0_15_quiz
                                                 switch (choiceTheme)
                                                 {
                                                     case 1:
-                                                        foreach (Dictionary<string, Answer> item in topics)
-                                                        {
-
-                                                            foreach (var it in item)
+                                                    short countTrueAnswer = 0;
+                                                        Dictionary<int, string> tempAnswers = new Dictionary<int,string>();
+                                                            foreach (var it in cSharp)
                                                             {
-                                                                Console.WriteLine(it.Key);
-                                                                foreach (var i in it.Value.answerOptionsFalseAndTrue)
+                                                                Console.Clear();
+                                                                int count = 1; 
+                                                                int choiceAnswer;
+                                                                string checkAnswer;
+                                                                Console.WriteLine("Вопрос: " + it.Value.Question);
+                                                                Console.WriteLine("Варианты ответа: ");
+                                                                foreach (var i in it.Value.answers)
                                                                 {
-                                                                    Console.WriteLine(i + " test");
+                                                                    Console.WriteLine(count + " " + i.Key);
+                                                                    tempAnswers.Add(count,i.Key);
+                                                                    count++;
                                                                 }
-
+                                                                Console.Write("Выберите номер правильного ответа: ");
+                                                                if (!int.TryParse(Console.ReadLine(), out choiceAnswer) || (choiceAnswer <= 0) || (choiceAnswer > 4))
+                                                                {
+                                                                    Console.WriteLine("Данные не корректны.");
+                                                                    Console.ReadKey();
+                                                                    break;
+                                                                }
+                                                                else
+                                                                {
+                                                                    checkAnswer = tempAnswers[choiceAnswer];
+                                                                    foreach (var i in it.Value.answers)
+                                                                    {
+                                                                        if(i.Key == checkAnswer)
+                                                                        {
+                                                                            if(i.Value == true)
+                                                                            {
+                                                                                Console.WriteLine("Ваш ответ правильный.");
+                                                                                countTrueAnswer++;
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                Console.WriteLine("Ваш ответ не правильный.");
+                                                                            }
+                                                                        }
+                                                                        else if(i.Value == true)
+                                                                        {
+                                                                            Console.WriteLine("Правильный ответ: " + i.Key);
+                                                                        }
+                                                                    }
+                                                                }
+                                                                tempAnswers.Clear();
+                                                                Console.ReadKey();
                                                             }
-
-                                                        }
+                                                        Console.Clear();
+                                                        Console.WriteLine("Результаты:");
+                                                        Console.WriteLine("Всего правильных ответов: " + countTrueAnswer + " из " + cSharp.Count());
                                                         Console.ReadKey();
                                                         break;
                                                     case 2:
@@ -348,24 +408,18 @@ namespace _0_15_quiz
         }
     }
 
-    public class Answer
+    public class QuestionAnswer
     {
+        public string Question;
         public List<string> answerOptionsTrue = new List<string>();
         public List<string> answerOptionsFalse = new List<string>();
         public List<string> answerOptionsFalseAndTrue = new List<string>();
+        public Dictionary<string,bool> answers;
 
-        public Answer(string str, bool b)
+        public QuestionAnswer(string question, Dictionary<string, bool> answers)  
         {
-            answerOptionsFalseAndTrue.Add(str);
-            if (b)
-            {
-                answerOptionsTrue.Add(str);
-            }
-            else
-            {
-                answerOptionsFalse.Add(str);
-            }
-
+            Question = question;
+            this.answers = answers;
         }
 
     }
