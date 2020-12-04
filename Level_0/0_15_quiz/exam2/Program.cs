@@ -10,9 +10,8 @@ namespace _0_15_quiz
 
         static void Main()
         {
-
+            
             Dictionary<string, PersonData> users = new Dictionary<string, PersonData>() { { "1", new PersonData("2") } };
-
             Dictionary<int, QuestionAnswer> cSharp = new Dictionary<int, QuestionAnswer>
             {
                 {
@@ -28,11 +27,11 @@ namespace _0_15_quiz
                 },
                 {
                     2, new QuestionAnswer
-                    ("Tuple это...", new Dictionary<string, bool>
+                    ("Кортеж это...", new Dictionary<string, bool>
                         {
-                        {"черепаха" , false},
-                        {"кортёж" , true},
-                        {"вояж", false},
+                        {"вид делегата" , false},
+                        {"набор значений, заключенных в круглые скобки:" , true},
+                        {"событие нажатия на две клавиши одновременно", false},
                         {"рекурсивная функция", false}
                         } 
                     )
@@ -199,7 +198,7 @@ namespace _0_15_quiz
                                             Console.Clear();
                                             Print.SettingMenu();
 
-                                            if ((!short.TryParse(Console.ReadLine(), out choiceSettingMenu)) || (choiceSettingMenu <= 0) || (choiceSettingMenu > 3))
+                                            if ((!short.TryParse(Console.ReadLine(), out choiceSettingMenu)) || (choiceSettingMenu <= 0) || (choiceSettingMenu > 4))
                                             {
                                                 Print.DataIsIncorrect();
                                                 Console.ReadKey();
@@ -249,7 +248,6 @@ namespace _0_15_quiz
                                                         while (true)
                                                         {
                                                             string newDateOfBirth;
-
                                                             Console.Write("Введите новую дату рождения: ");
                                                             newDateOfBirth = Console.ReadLine();
                                                             if (newDateOfBirth.Trim() == "")
@@ -266,10 +264,17 @@ namespace _0_15_quiz
                                                         }
                                                         break;
                                                     case 3:
+                                                        Console.Clear();
+                                                        Console.WriteLine("*************************************************");
+                                                        Console.WriteLine("Логин: " + activeUserLogin);
+                                                        Console.WriteLine("Пароль: " + users[activeUserLogin].password);
+                                                        Console.WriteLine("Дата рождения: " + users[activeUserLogin].dateOfBirth);
+                                                        Console.WriteLine("*************************************************");
+                                                        Console.ReadKey();
                                                         break;
                                                 }
                                             }
-                                        } while (choiceSettingMenu != 3);
+                                        } while (choiceSettingMenu != 4);
                                         break;
                                     case 5: // 5. Выход.
                                         break;
@@ -371,7 +376,8 @@ namespace _0_15_quiz
             Console.WriteLine("Настройки профиля:                        |");
             Console.WriteLine("1. Изменить пароль.                       |");
             Console.WriteLine("2. Изменить дату рождения.                |");
-            Console.WriteLine("3. Выход.                                 |");
+            Console.WriteLine("3. Показать данные пользователя.         |");
+            Console.WriteLine("4. Выход.                                 |");
             Console.WriteLine("*******************************************");
             Console.Write("Ваш выбор: ");
         }
@@ -421,7 +427,15 @@ namespace _0_15_quiz
             Question = question;
             this.answers = answers;
         }
+    }
 
+    public static class Result
+    {
+        public static int  counter = 0;
+        public static void Add(string loginUser, short countTrueAnswer)
+        {
+            counter++;
+        }
     }
 }
 
