@@ -1,51 +1,57 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using Newtonsoft.Json;
 
-namespace _0_15_quiz
+namespace exam2
 {
     class Program
     {
 
         static void Main()
         {
-            
-            Dictionary<string, PersonData> users = new Dictionary<string, PersonData>() { { "1", new PersonData("2") } };
-            Dictionary<int, QuestionAnswer> cSharp = new Dictionary<int, QuestionAnswer>
-            {
-                {
-                    1, new QuestionAnswer
-                    ("Какого типа данных нет в c#.", new Dictionary<string, bool>
-                        {
-                        {"ubyte" , true},
-                        {"int" , false},
-                        {"bite", false},
-                        {"long", false}
-                        } 
-                    )
-                },
-                {
-                    2, new QuestionAnswer
-                    ("Кортеж это...", new Dictionary<string, bool>
-                        {
-                        {"вид делегата" , false},
-                        {"набор значений, заключенных в круглые скобки:" , true},
-                        {"событие нажатия на две клавиши одновременно", false},
-                        {"рекурсивная функция", false}
-                        } 
-                    )
-                }
-            };
-            //python.Add("питон_вопрос", new QuestionAnswer("питон_ответ", true));
-            //topics.Add(cSharp);
-            short choiceMainMenu;
+            string json;
+            string pathUserInfo = @"UserInfo.json";
+            string pathCsharpTest = @"CsharpTest.json";
+            string pathAllResult = @"AllResult.json";
+            string pathResultatCsharp = @"ResultatCsharp.json";
             string activeUserLogin = "";
+
+            Result resultatCsharp = new Result();
+            if (File.Exists(pathResultatCsharp))
+            {
+                json = File.ReadAllText(pathResultatCsharp);
+                resultatCsharp = JsonConvert.DeserializeObject<Result>(json);
+            }
+
+            Result allResult = new Result();
+            if (File.Exists(pathAllResult))
+            {
+                json = File.ReadAllText(pathAllResult);
+                allResult = JsonConvert.DeserializeObject<Result>(json);
+            }
+
+            Dictionary<string, PersonData> users = new Dictionary<string, PersonData>();
+            if (File.Exists(pathUserInfo))
+            {
+                json = File.ReadAllText(pathUserInfo);
+                users = JsonConvert.DeserializeObject<Dictionary<string, PersonData>>(json);
+            }
+
+            Dictionary<int, QuestionAnswer> cSharp = new Dictionary<int, QuestionAnswer>();
+            if (File.Exists(pathCsharpTest))
+            {
+                json = File.ReadAllText(pathCsharpTest);
+                cSharp = JsonConvert.DeserializeObject<Dictionary<int, QuestionAnswer>>(json);
+            }
+
+            short choiceMainMenu;
             do
             {
                 Console.Clear();
                 Print.Autorization();
-                if ((!short.TryParse(Console.ReadLine(), out choiceMainMenu) || (choiceMainMenu <= 0) || (choiceMainMenu > 2)))
+                if (!short.TryParse(Console.ReadLine(), out choiceMainMenu) || choiceMainMenu <= 0 || choiceMainMenu > 2)
                 {
                     Console.Clear();
                     Print.DataIsIncorrect();
@@ -61,38 +67,46 @@ namespace _0_15_quiz
                     {
                         var tempUser = autorization();
                         string dateOfBirth;
+                        bool checkUserCorrect = true;
                         foreach (KeyValuePair<string, PersonData> keyValue in tempUser)
                         {
 
 
                             if (users.ContainsKey(keyValue.Key))
                             {
-                                Console.WriteLine("Такой пользователь уже существует!");
+                                if (keyValue.Value.password == users[keyValue.Key].password)
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine($"WELCOME, {keyValue.Key}!");
+                                    Console.ReadKey();
+                                }
+                                    
+                                else
+                                {
+                                    Console.WriteLine("Пароль не правильный!!!");
+                                    checkUserCorrect = false;
+                                    Console.ReadKey();
+                                    break;
+                                }
                             }
                             else
                             {
-                                //Console.WriteLine("Такого пользователя ещё нет!");
-                                // Console.WriteLine("Добро пожаловать " + keyValue.Key + "");
                                 Console.Write("Введите свой день рождения: ");
                                 dateOfBirth = Console.ReadLine();
                                 users.Add(keyValue.Key, new PersonData(keyValue.Value.password, dateOfBirth));
                                 Console.WriteLine("Пользователь успешно зарегестрирован!");
-                                foreach (var user in users)
-                                {
-                                    Console.WriteLine("Логин: " + user.Key);
-                                    Console.WriteLine("Пароль: " + user.Value.password);
-                                    Console.WriteLine("Дата рождения: " + user.Value.dateOfBirth);
-                                }
+                                Console.ReadKey();
                             }
                             activeUserLogin = keyValue.Key;
                         }
                         short choiceQuizMenu = 0;
+                        if (!checkUserCorrect) { break; }
                         do
                         {
 
                             Console.Clear();
                             Print.QuizMenu();
-                            if ((!short.TryParse(Console.ReadLine(), out choiceQuizMenu) || (choiceQuizMenu <= 0) || (choiceQuizMenu > 5)))
+                            if (!short.TryParse(Console.ReadLine(), out choiceQuizMenu) || choiceQuizMenu <= 0 || choiceQuizMenu > 5)
                             {
                                 Console.Clear();
                                 Print.DataIsIncorrect();
@@ -108,7 +122,7 @@ namespace _0_15_quiz
                                         {
                                             Console.Clear();
                                             Print.ThemeSelection();
-                                            if ((!short.TryParse(Console.ReadLine(), out choiceTheme)) || (choiceTheme <= 0) || (choiceTheme > 6))
+                                            if (!short.TryParse(Console.ReadLine(), out choiceTheme) || choiceTheme <= 0 || choiceTheme > 6)
                                             {
                                                 Print.DataIsIncorrect();
                                                 Console.ReadKey();
@@ -118,61 +132,65 @@ namespace _0_15_quiz
                                                 switch (choiceTheme)
                                                 {
                                                     case 1:
-                                                    short countTrueAnswer = 0;
-                                                        Dictionary<int, string> tempAnswers = new Dictionary<int,string>();
-                                                            foreach (var it in cSharp)
+                                                        short countTrueAnswer = 0;
+                                                        Dictionary<int, string> tempAnswers = new Dictionary<int, string>();
+                                                        foreach (var it in cSharp)
+                                                        {
+                                                            Console.Clear();
+                                                            int count = 1;
+                                                            int choiceAnswer;
+                                                            string checkAnswer;
+                                                            Console.WriteLine("Вопрос: " + it.Value.Question);
+                                                            Console.WriteLine("Варианты ответа: ");
+                                                            foreach (var i in it.Value.answers)
                                                             {
-                                                                Console.Clear();
-                                                                int count = 1; 
-                                                                int choiceAnswer;
-                                                                string checkAnswer;
-                                                                Console.WriteLine("Вопрос: " + it.Value.Question);
-                                                                Console.WriteLine("Варианты ответа: ");
+                                                                Console.WriteLine(count + " " + i.Key);
+                                                                tempAnswers.Add(count, i.Key);
+                                                                count++;
+                                                            }
+                                                            Console.Write("Выберите номер правильного ответа: ");
+                                                            if (!int.TryParse(Console.ReadLine(), out choiceAnswer) || choiceAnswer <= 0 || choiceAnswer > 4)
+                                                            {
+                                                                Console.WriteLine("Данные не корректны.");
+                                                                Console.ReadKey();
+                                                                break;
+                                                            }
+                                                            else
+                                                            {
+                                                                checkAnswer = tempAnswers[choiceAnswer];
                                                                 foreach (var i in it.Value.answers)
                                                                 {
-                                                                    Console.WriteLine(count + " " + i.Key);
-                                                                    tempAnswers.Add(count,i.Key);
-                                                                    count++;
-                                                                }
-                                                                Console.Write("Выберите номер правильного ответа: ");
-                                                                if (!int.TryParse(Console.ReadLine(), out choiceAnswer) || (choiceAnswer <= 0) || (choiceAnswer > 4))
-                                                                {
-                                                                    Console.WriteLine("Данные не корректны.");
-                                                                    Console.ReadKey();
-                                                                    break;
-                                                                }
-                                                                else
-                                                                {
-                                                                    checkAnswer = tempAnswers[choiceAnswer];
-                                                                    foreach (var i in it.Value.answers)
+                                                                    if (i.Key == checkAnswer)
                                                                     {
-                                                                        if(i.Key == checkAnswer)
+                                                                        if (i.Value == true)
                                                                         {
-                                                                            if(i.Value == true)
-                                                                            {
-                                                                                Console.WriteLine("Ваш ответ правильный.");
-                                                                                countTrueAnswer++;
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                Console.WriteLine("Ваш ответ не правильный.");
-                                                                            }
+                                                                            Console.WriteLine("Ваш ответ правильный.");
+                                                                            countTrueAnswer++;
                                                                         }
-                                                                        else if(i.Value == true)
+                                                                        else
                                                                         {
-                                                                            Console.WriteLine("Правильный ответ: " + i.Key);
+                                                                            Console.WriteLine("Ваш ответ не правильный.");
                                                                         }
                                                                     }
+                                                                    else if (i.Value == true)
+                                                                    {
+                                                                        Console.WriteLine("Правильный ответ: " + i.Key);
+                                                                    }
                                                                 }
-                                                                tempAnswers.Clear();
-                                                                Console.ReadKey();
                                                             }
+                                                            tempAnswers.Clear();
+                                                            Console.ReadKey();
+                                                        }
+                                                        resultatCsharp.Add(activeUserLogin, countTrueAnswer);
+                                                        allResult.Add(activeUserLogin, countTrueAnswer, "C#");
                                                         Console.Clear();
                                                         Console.WriteLine("Результаты:");
                                                         Console.WriteLine("Всего правильных ответов: " + countTrueAnswer + " из " + cSharp.Count());
                                                         Console.ReadKey();
                                                         break;
                                                     case 2:
+
+
                                                         break;
                                                     case 3:
                                                         break;
@@ -187,9 +205,88 @@ namespace _0_15_quiz
                                             }
                                         } while (choiceTheme != 6);
                                         break;
-                                    case 2: // Посмотреть результаты прошлых викторин.
+                                    case 2: // Посмотреть ТОП-10 по викторинам.
+                                        Console.Clear();
+                                        short choiceResult;
+                                        Print.TypeResult();
+                                        if (!short.TryParse(Console.ReadLine(), out choiceResult) || choiceResult <= 0 || choiceResult > 2)
+                                        {
+                                            Console.Clear();
+                                            Print.DataIsIncorrect();
+                                            Console.ReadKey();
+                                        }
+                                        else
+                                        {
+                                            switch (choiceResult)
+                                            {
+                                                case 1:
+                                                    Console.Clear();
+                                                    if (resultatCsharp.res.Count > 0)
+                                                    {
+                                                        Console.WriteLine("***************************************");
+                                                        Console.WriteLine("|_______________TOP 10________________|");
+                                                        Console.WriteLine("|_____________________________________|");
+                                                        Console.WriteLine("| Пользователь|     Правильных ответов|");
+                                                        Console.WriteLine("|_____________|_______________________|");
+                                                        int j = 20;
+                                                        int koll = 0;
+                                                        do
+                                                        {
+                                                            foreach (var res in resultatCsharp.res)
+                                                            {
+                                                                foreach (var r in res.Value)
+                                                                {
+                                                                    if (koll >= 10) break;
+                                                                    if (r.Value == j)
+                                                                    {
+                                                                        Console.WriteLine("|{0,13}| {1,22}|", r.Key, r.Value);
+                                                                        koll++;
+                                                                    }
+                                                                }
+                                                            }
+                                                            j--;
+                                                        } while (j >= 0);
+                                                        Console.WriteLine("|_____________|_______________________|");
+                                                        Console.WriteLine("***************************************");
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.WriteLine("Результатов пока нет!");
+                                                    }
+                                                    break;
+                                            }
+                                        }
+                                        Console.ReadKey();
                                         break;
-                                    case 3: // Посмотреть ТОП-10 по викторинам.
+                                    case 3: // Посмотреть результаты прошлых викторин.
+                                        Console.Clear();
+                                        //работает не совсем корректно, пользователь мог не отвечать ещё на тест по c#, но resultatCsharp.res.Count может быть больше нуля
+                                        if (resultatCsharp.res.Count > 0)
+                                        {
+                                            Console.WriteLine("*****************************************");
+                                            Console.WriteLine("|            Результаты                 |");
+                                            Console.WriteLine("|_______________________________________|");
+                                            Console.WriteLine("|     Тема     |   Правильных ответов   |");
+                                            Console.WriteLine("|______________|________________________|");
+
+                                            foreach (var res in allResult.res)
+                                            {
+                                                foreach (var line in res.Value)
+                                                {
+                                                    if(line.Key == activeUserLogin)
+                                                    {
+                                                        Console.WriteLine("|{0,14}| {1,23}|", allResult.type, line.Value);
+                                                    }
+                                                }
+                                            }
+                                            Console.WriteLine("|______________|________________________|");
+                                            Console.WriteLine("*****************************************");
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("Результатов пока нет!");
+                                        }
+                                        Console.ReadKey();
                                         break;
                                     case 4: // Изменить настройки.
                                         short choiceSettingMenu = 0;
@@ -198,7 +295,7 @@ namespace _0_15_quiz
                                             Console.Clear();
                                             Print.SettingMenu();
 
-                                            if ((!short.TryParse(Console.ReadLine(), out choiceSettingMenu)) || (choiceSettingMenu <= 0) || (choiceSettingMenu > 4))
+                                            if (!short.TryParse(Console.ReadLine(), out choiceSettingMenu) || choiceSettingMenu <= 0 || choiceSettingMenu > 4)
                                             {
                                                 Print.DataIsIncorrect();
                                                 Console.ReadKey();
@@ -221,7 +318,7 @@ namespace _0_15_quiz
                                                                 Console.WriteLine("Новый пароль должен отличаться от старого пароля.");
                                                                 Console.ReadKey();
                                                             }
-                                                            else if ((oldPassword.Contains(" ")) || (newPassword.Contains(" ")))
+                                                            else if (oldPassword.Contains(" ") || newPassword.Contains(" "))
                                                             {
                                                                 Console.WriteLine("Пароль не должен содержать в себе пробелы.");
                                                                 Console.ReadKey();
@@ -287,6 +384,14 @@ namespace _0_15_quiz
                 }
             } while (choiceMainMenu != 2);
 
+            string end = JsonConvert.SerializeObject(users, Formatting.Indented);
+            File.WriteAllText(pathUserInfo, end);
+            end = JsonConvert.SerializeObject(cSharp, Formatting.Indented);
+            File.WriteAllText(pathCsharpTest, end);
+            end = JsonConvert.SerializeObject(resultatCsharp, Formatting.Indented);
+            File.WriteAllText(pathResultatCsharp, end);
+            end = JsonConvert.SerializeObject(allResult, Formatting.Indented);
+            File.WriteAllText(pathAllResult, end);
         }
         public static Dictionary<string, PersonData> autorization()
         {
@@ -297,15 +402,20 @@ namespace _0_15_quiz
             {
 
                 Console.Clear();
-
+                Console.WriteLine("Логин не может быть больше 13 символов!");
                 Console.Write("Введите логин: ");
                 login = Console.ReadLine();
-
+                if (login.Length > 13)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Длина логина больше 13 символов!");
+                    Console.ReadKey();
+                    continue;
+                }
                 Console.Write("Введите пароль: ");
                 password = Console.ReadLine();
 
-                Console.WriteLine("------------------------------------|");
-                if ((login.Contains(" ")) || (password.Contains(" ")) || (login == password))
+                if (login.Contains(" ") || password.Contains(" ") || login == password)
                 {
                     Print.LoginOrPasswordInCorrect();
                     Console.ReadKey();
@@ -313,8 +423,8 @@ namespace _0_15_quiz
                 }
                 else
                 {
-                    tempUserrr.Add(login, new PersonData(password));
-                    break;
+                   tempUserrr.Add(login, new PersonData(password));
+                   break;
                 }
             }
 
@@ -323,10 +433,7 @@ namespace _0_15_quiz
 
 
     }
-
-
-
-
+         
     public static class Print
     {
         public static void Autorization()
@@ -354,8 +461,8 @@ namespace _0_15_quiz
             Console.WriteLine("*************************************************");
             Console.WriteLine("Меню Викторины:                                 |");
             Console.WriteLine("1. Начать новую викторину.                      |");
-            Console.WriteLine("2. Посмотреть результаты прошлых викторин.      |");
-            Console.WriteLine("3. Посмотреть ТОП-10 по викторинам.             |");
+            Console.WriteLine("2. Посмотреть ТОП-10 по викторинам.             |");
+            Console.WriteLine("3. Посмотреть результаты прошлых викторин.      |");
             Console.WriteLine("4. Изменить настройки.                          |");
             Console.WriteLine("5. Выход.                                       |");
             Console.WriteLine("*************************************************");
@@ -394,6 +501,16 @@ namespace _0_15_quiz
             Console.WriteLine("*******************************************");
             Console.Write("Ваш выбор: ");
         }
+
+        public static void TypeResult()
+        {
+            Console.WriteLine("*******************************************");
+            Console.WriteLine("*Выберите викторину:                      |");
+            Console.WriteLine("1. С#.                                    |");
+            Console.WriteLine("2. Python.                                |");
+            Console.WriteLine("*******************************************");
+            Console.Write("Ваш выбор: ");
+        }
     }
 
     public class PersonData
@@ -410,31 +527,54 @@ namespace _0_15_quiz
         public PersonData(string password)
         {
             this.password = password;
-            this.dateOfBirth = "";
+            dateOfBirth = "";
+        }
+
+        public PersonData()
+        {
+
         }
     }
 
     public class QuestionAnswer
     {
         public string Question;
-        public List<string> answerOptionsTrue = new List<string>();
-        public List<string> answerOptionsFalse = new List<string>();
-        public List<string> answerOptionsFalseAndTrue = new List<string>();
-        public Dictionary<string,bool> answers;
+        public Dictionary<string, bool> answers;
 
-        public QuestionAnswer(string question, Dictionary<string, bool> answers)  
+        public QuestionAnswer(string question, Dictionary<string, bool> answers)
         {
             Question = question;
             this.answers = answers;
         }
     }
 
-    public static class Result
+    public class Result
     {
-        public static int  counter = 0;
-        public static void Add(string loginUser, short countTrueAnswer)
+        public int counter = 0;
+        public string type;
+        public  Dictionary<int, Dictionary<string, int>> res = new Dictionary<int, Dictionary<string, int>>();
+        public void Add(string loginUser, short countTrueAnswer)
         {
+            var tempDictionary = new Dictionary<string, int>
+            {
+                { loginUser, countTrueAnswer }
+            };
+            res.Add(counter, tempDictionary);
             counter++;
+        }
+        public void Add(string loginUser, short countTrueAnswer, string type)
+        {
+            var tempDictionary = new Dictionary<string, int>
+            {
+                { loginUser, countTrueAnswer }
+            };
+            this.type = type;
+            res.Add(counter, tempDictionary);
+            counter++;
+        }
+        public Result()
+        {
+
         }
     }
 }
