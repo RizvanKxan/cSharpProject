@@ -260,7 +260,8 @@ namespace exam2
                                         break;
                                     case 3: // Посмотреть результаты прошлых викторин.
                                         Console.Clear();
-                                        //работает не совсем корректно, пользователь мог не отвечать ещё на тест по c#, но resultatCsharp.res.Count может быть больше нуля
+                                        bool checkLoginInResult = false;
+
                                         if (resultatCsharp.res.Count > 0)
                                         {
                                             Console.WriteLine("*****************************************");
@@ -268,22 +269,24 @@ namespace exam2
                                             Console.WriteLine("|_______________________________________|");
                                             Console.WriteLine("|     Тема     |   Правильных ответов   |");
                                             Console.WriteLine("|______________|________________________|");
-
                                             foreach (var res in allResult.res)
                                             {
                                                 foreach (var line in res.Value)
-                                                {
+                                                {                                      
                                                     if(line.Key == activeUserLogin)
                                                     {
                                                         Console.WriteLine("|{0,14}| {1,23}|", allResult.type, line.Value);
+                                                        checkLoginInResult = true;
                                                     }
                                                 }
                                             }
                                             Console.WriteLine("|______________|________________________|");
                                             Console.WriteLine("*****************************************");
                                         }
-                                        else
+
+                                        if(!checkLoginInResult)
                                         {
+                                            Console.Clear();
                                             Console.WriteLine("Результатов пока нет!");
                                         }
                                         Console.ReadKey();
