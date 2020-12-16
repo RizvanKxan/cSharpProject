@@ -1,33 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace exam2
 {
     public class Result
     {
-        public int counter = 0;
-        public string type;
-        public Dictionary<int, Dictionary<string, int>> res = new Dictionary<int, Dictionary<string, int>>();
-        public void Add(string loginUser, short countTrueAnswer)
-        {
-            var tempDictionary = new Dictionary<string, int>
-            {
-                { loginUser, countTrueAnswer }
-            };
-            res.Add(counter, tempDictionary);
-            counter++;
-        }
+        [NonSerialized]
+        public List<Dictionary<string, int>> listRes = new List<Dictionary<string, int>>();
+        public Dictionary<string, List<Dictionary<string, int>>> allRes = new Dictionary<string, List<Dictionary<string, int>>>();
+        /// <summary>
+        /// Функция добавляющая информацию о результатах викторины в класс Result.
+        /// </summary>
+        /// <param name="loginUser">Логин пользователя.</param>
+        /// <param name="countTrueAnswer">Количество правильных ответов.</param>
+        /// <param name="type">Тип викторины(имя).</param>
         public void Add(string loginUser, short countTrueAnswer, string type)
         {
             var tempDictionary = new Dictionary<string, int>
             {
                 { loginUser, countTrueAnswer }
             };
-            this.type = type;
-            res.Add(counter, tempDictionary);
-            counter++;
+
+            if (allRes.ContainsKey(type))
+            {
+                allRes[type].Add(tempDictionary);
+            }
+            else
+            {
+                listRes.Add(tempDictionary);
+                allRes.Add(type, listRes);
+            }
+            
         }
         public Result()
         {

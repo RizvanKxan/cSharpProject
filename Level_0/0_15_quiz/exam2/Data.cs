@@ -1,9 +1,6 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace exam2
 {
@@ -49,7 +46,10 @@ namespace exam2
         /// Словарь в котором хранятся вопросы с ответами.
         /// </summary>
         public static Dictionary<int, QuestionAnswer> cSharp = new Dictionary<int, QuestionAnswer>();
-
+        /// <summary>
+        /// Словарь в котором хранятся вопросы с ответами из файла.
+        /// </summary>
+        public static Dictionary<int, QuestionAnswer> tempTest = new Dictionary<int, QuestionAnswer>();
         /// <summary>
         /// Функция инициализации всех компонентов. Если файлы с данными существуют, то десериализует в объекты программы. 
         /// </summary>

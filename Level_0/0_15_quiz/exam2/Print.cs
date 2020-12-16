@@ -34,7 +34,7 @@ namespace exam2
             Console.WriteLine("Меню Викторины:                                 |");
             Console.WriteLine("1. Начать новую викторину.                      |");
             Console.WriteLine("2. Посмотреть ТОП-10 по викторинам.             |");
-            Console.WriteLine("3. Посмотреть результаты прошлых викторин.      |");
+            Console.WriteLine("3. Посмотреть результаты своих прошлых викторин.|");
             Console.WriteLine("4. Изменить настройки.                          |");
             Console.WriteLine("5. Выход.                                       |");
             Console.WriteLine("*************************************************");
@@ -65,11 +65,8 @@ namespace exam2
             Console.WriteLine("*******************************************");
             Console.WriteLine("*Выберите тему викторины:                 |");
             Console.WriteLine("1. С#.                                    |");
-            Console.WriteLine("2. Python.                                |");
-            Console.WriteLine("3. HTML.                                  |");
-            Console.WriteLine("4. CSS.                                   |");
-            Console.WriteLine("5. Тестирование ПО.                       |");
-            Console.WriteLine("6. Выход.                                 |");
+            Console.WriteLine("2. Тест из файла.                         |");
+            Console.WriteLine("3. Выход.                                 |");
             Console.WriteLine("*******************************************");
             Console.Write("Ваш выбор: ");
         }
@@ -79,7 +76,7 @@ namespace exam2
             Console.WriteLine("*******************************************");
             Console.WriteLine("*Выберите викторину:                      |");
             Console.WriteLine("1. С#.                                    |");
-            Console.WriteLine("2. Python.                                |");
+            Console.WriteLine("2. Викторина из файла.                    |");
             Console.WriteLine("*******************************************");
             Console.Write("Ваш выбор: ");
         }

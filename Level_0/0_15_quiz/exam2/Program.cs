@@ -91,7 +91,7 @@ namespace exam2
                                         {
                                             Console.Clear();
                                             Print.ThemeSelection();
-                                            if (!short.TryParse(Console.ReadLine(), out choiceTheme) || choiceTheme <= 0 || choiceTheme > 6)
+                                            if (!short.TryParse(Console.ReadLine(), out choiceTheme) || choiceTheme <= 0 || choiceTheme > 3)
                                             {
                                                 Print.DataIsIncorrect();
                                                 Console.ReadKey();
@@ -150,7 +150,7 @@ namespace exam2
                                                             tempAnswers.Clear();
                                                             Console.ReadKey();
                                                         }
-                                                        Data.resultatCsharp.Add(Data.activeUserLogin, countTrueAnswer, "C#");
+                                                        //Data.resultatCsharp.Add(Data.activeUserLogin, countTrueAnswer);
                                                         Data.allResult.Add(Data.activeUserLogin, countTrueAnswer, "C#");
                                                         Console.Clear();
                                                         Console.WriteLine("Результаты:");
@@ -158,21 +158,77 @@ namespace exam2
                                                         Console.ReadKey();
                                                         break;
                                                     case 2:
+                                                        countTrueAnswer = 0;
+                                                        string name;
+                                                        string json;
+                                                        tempAnswers = new Dictionary<int, string>();
+                                                        Console.Write("Введите название файла с тестом: ");
+                                                        name = Console.ReadLine();
+                                                        if (File.Exists(name + ".json"))
+                                                        {
+                                                            json = File.ReadAllText(name + ".json");
+                                                            Data.tempTest = JsonConvert.DeserializeObject<Dictionary<int, QuestionAnswer>>(json);
+                                                        }
+                                                        foreach (var it in Data.tempTest)
+                                                        {
+                                                            Console.Clear();
+                                                            int count = 1;
+                                                            int choiceAnswer;
+                                                            string checkAnswer;
+                                                            Console.WriteLine("Вопрос: " + it.Value.Question);
+                                                            Console.WriteLine("Варианты ответа: ");
+                                                            foreach (var i in it.Value.answers)
+                                                            {
+                                                                Console.WriteLine(count + " " + i.Key);
+                                                                tempAnswers.Add(count, i.Key);
+                                                                count++;
+                                                            }
+                                                            Console.Write("Выберите номер правильного ответа: ");
+                                                            if (!int.TryParse(Console.ReadLine(), out choiceAnswer) || choiceAnswer <= 0 || choiceAnswer > 4)
+                                                            {
+                                                                Console.WriteLine("Данные не корректны.");
+                                                                Console.ReadKey();
+                                                                break;
+                                                            }
+                                                            else
+                                                            {
+                                                                checkAnswer = tempAnswers[choiceAnswer];
+                                                                foreach (var i in it.Value.answers)
+                                                                {
+                                                                    if (i.Key == checkAnswer)
+                                                                    {
+                                                                        if (i.Value == true)
+                                                                        {
+                                                                            Console.WriteLine("Ваш ответ правильный.");
+                                                                            countTrueAnswer++;
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            Console.WriteLine("Ваш ответ не правильный.");
+                                                                        }
+                                                                    }
+                                                                    else if (i.Value == true)
+                                                                    {
+                                                                        Console.WriteLine("Правильный ответ: " + i.Key);
+                                                                    }
+                                                                }
+                                                            }
+                                                            tempAnswers.Clear();
+                                                            Console.ReadKey();
+                                                        }
+                                                       // Data.resultatCsharp.Add(Data.activeUserLogin, countTrueAnswer, "C#");
+                                                        Data.allResult.Add(Data.activeUserLogin, countTrueAnswer, name);
+                                                        Console.Clear();
+                                                        Console.WriteLine("Результаты:");
+                                                        Console.WriteLine("Всего правильных ответов: " + countTrueAnswer + " из " + Data.tempTest.Count());
+                                                        Console.ReadKey();
 
-
                                                         break;
-                                                    case 3:
-                                                        break;
-                                                    case 4:
-                                                        break;
-                                                    case 5:
-                                                        break;
-
                                                     default:
                                                         break;
                                                 }
                                             }
-                                        } while (choiceTheme != 6);
+                                        } while (choiceTheme != 3);
                                         break;
                                     case 2: // Посмотреть ТОП-10 по викторинам.
                                         Console.Clear();
@@ -188,9 +244,10 @@ namespace exam2
                                         {
                                             switch (choiceResult)
                                             {
-                                                case 1:
+                                            case 1:
                                                     Console.Clear();
-                                                    if (Data.resultatCsharp.res.Count > 0)
+                                                    string type = "C#";
+                                                    if (Data.allResult.allRes.ContainsKey(type))
                                                     {
                                                         Console.WriteLine("***************************************");
                                                         Console.WriteLine("|_______________TOP 10________________|");
@@ -201,16 +258,20 @@ namespace exam2
                                                         int koll = 0;
                                                         do
                                                         {
-                                                            foreach (var res in Data.resultatCsharp.res)
+                                                            
+                                                            foreach (var res in Data.allResult.allRes[type])
                                                             {
-                                                                foreach (var r in res.Value)
+                                                                foreach (var r in res)
                                                                 {
-                                                                    if (koll >= 10) break;
-                                                                    if (r.Value == j)
-                                                                    {
-                                                                        Console.WriteLine("|{0,13}| {1,22}|", r.Key, r.Value);
-                                                                        koll++;
-                                                                    }
+
+                                                                        if (koll >= 10) break;
+                                                                        if (r.Value == j)
+                                                                        {
+                                                                            Console.WriteLine("|{0,13}| {1,22}|", r.Key, r.Value);
+                                                                            koll++;
+                                                                        }
+                                                                    
+                                                                    
                                                                 }
                                                             }
                                                             j--;
@@ -223,6 +284,49 @@ namespace exam2
                                                         Console.WriteLine("Результатов пока нет!");
                                                     }
                                                     break;
+
+                                            case 2:
+                                                    Console.Clear();
+                                                    Console.Write("Введите название викторины: ");
+                                                    type = Console.ReadLine();
+                                                    if (Data.allResult.allRes.ContainsKey(type))
+                                                    {
+                                                        Console.WriteLine("***************************************");
+                                                        Console.WriteLine("|_______________TOP 10________________|");
+                                                        Console.WriteLine("|_____________________________________|");
+                                                        Console.WriteLine("| Пользователь|     Правильных ответов|");
+                                                        Console.WriteLine("|_____________|_______________________|");
+                                                        int j = 20;
+                                                        int koll = 0;
+                                                        do
+                                                        {
+
+                                                            foreach (var res in Data.allResult.allRes[type])
+                                                            {
+                                                                foreach (var r in res)
+                                                                {
+
+                                                                    if (koll >= 10) break;
+                                                                    if (r.Value == j)
+                                                                    {
+                                                                        Console.WriteLine("|{0,13}| {1,22}|", r.Key, r.Value);
+                                                                        koll++;
+                                                                    }
+
+
+                                                                }
+                                                            }
+                                                            j--;
+                                                        } while (j >= 0);
+                                                        Console.WriteLine("|_____________|_______________________|");
+                                                        Console.WriteLine("***************************************");
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.WriteLine("Результатов пока нет. Либо викторины с таким названием не было!");
+                                                    }
+                                                    break;
+
                                             }
                                         }
                                         Console.ReadKey();
@@ -231,22 +335,26 @@ namespace exam2
                                         Console.Clear();
                                         bool checkLoginInResult = false;
 
-                                        if (Data.resultatCsharp.res.Count > 0)
+                                        if (Data.allResult.allRes.Count > 0)
                                         {
                                             Console.WriteLine("*****************************************");
                                             Console.WriteLine("|            Результаты                 |");
                                             Console.WriteLine("|_______________________________________|");
                                             Console.WriteLine("|     Тема     |   Правильных ответов   |");
                                             Console.WriteLine("|______________|________________________|");
-                                            foreach (var res in Data.allResult.res)
+                                            foreach (var res in Data.allResult.allRes)
                                             {
                                                 foreach (var line in res.Value)
-                                                {                                      
-                                                    if(line.Key == Data.activeUserLogin)
+                                                {
+                                                    foreach (var item in line)
                                                     {
-                                                        Console.WriteLine("|{0,14}| {1,23}|", Data.allResult.type, line.Value);
-                                                        checkLoginInResult = true;
+                                                        if (item.Key == Data.activeUserLogin)
+                                                        {
+                                                            Console.WriteLine("|{0,14}| {1,23}|", res.Key, item.Value);
+                                                            checkLoginInResult = true;
+                                                        }
                                                     }
+                                                    
                                                 }
                                             }
                                             Console.WriteLine("|______________|________________________|");
@@ -358,7 +466,10 @@ namespace exam2
 
             Data.FinallInitialization();
         }
-
+        /// <summary>
+        /// Функция проверяющая корректность логина и пароля. Возвращает временного пользователя если ввод корректен.
+        /// </summary>
+        /// <returns></returns>
         public static Dictionary<string, PersonData> autorization()
         {
             string login, password;
