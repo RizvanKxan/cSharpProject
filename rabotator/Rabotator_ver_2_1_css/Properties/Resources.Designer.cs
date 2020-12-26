@@ -61,6 +61,36 @@ namespace Rabotator_ver_2_1_css.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _32officeicons_31_89708 {
+            get {
+                object obj = ResourceManager.GetObject("_32officeicons_31_89708", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _7784ebb03fe8a08c3cf65cfc3d1409b9 {
+            get {
+                object obj = ResourceManager.GetObject("7784ebb03fe8a08c3cf65cfc3d1409b9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _7784ebb03fe8a08c3cf65cfc3d1409b9_1_ {
+            get {
+                object obj = ResourceManager.GetObject("7784ebb03fe8a08c3cf65cfc3d1409b9(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на 222222;789
         ///222222;456464
         ///.
@@ -68,6 +98,96 @@ namespace Rabotator_ver_2_1_css.Properties {
         internal static string Bookmarks {
             get {
                 return ResourceManager.GetString("Bookmarks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Dark_32officeicons_31_89708 {
+            get {
+                object obj = ResourceManager.GetObject("Dark_32officeicons_31_89708", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Dark_exit_closethesession_close_6317 {
+            get {
+                object obj = ResourceManager.GetObject("Dark_exit_closethesession_close_6317", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Dark_icons8_сканер_штрих_кодов_2_100 {
+            get {
+                object obj = ResourceManager.GetObject("Dark_icons8_сканер_штрих_кодов_2_100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Dark_robot_eset_57x64 {
+            get {
+                object obj = ResourceManager.GetObject("Dark_robot_eset_57x64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Dark_taskbar_list_tarea_9370 {
+            get {
+                object obj = ResourceManager.GetObject("Dark_taskbar_list_tarea_9370", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exit_closethesession_close_6317 {
+            get {
+                object obj = ResourceManager.GetObject("exit_closethesession_close_6317", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_сканер_штрих_кодов_2_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_сканер_штрих_кодов_2_100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap robot_eset_57x64 {
+            get {
+                object obj = ResourceManager.GetObject("robot_eset_57x64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap taskbar_list_tarea_9370 {
+            get {
+                object obj = ResourceManager.GetObject("taskbar_list_tarea_9370", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

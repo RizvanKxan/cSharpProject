@@ -89,6 +89,11 @@
     <Compile Include="pair.Designer.cs">
       <DependentUpon>pair.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Volume.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,14 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="app.config" />
     <None Include="bin\Debug\Bookmarks.csv" />
     <None Include="packages.config" />
@@ -160,6 +160,20 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Bookmarks.csv" />
+    <None Include="Resources\7784ebb03fe8a08c3cf65cfc3d1409b9.png" />
+    <None Include="Resources\7784ebb03fe8a08c3cf65cfc3d1409b9%281%29.png" />
+    <None Include="Resources\exit_closethesession_close_6317.png" />
+    <None Include="Resources\Dark_taskbar_list_tarea_9370.png" />
+    <None Include="Resources\Dark_robot-eset-57x64.png" />
+    <None Include="Resources\Dark_icons8-сканер-штрих-кодов-2-100.png" />
+    <None Include="Resources\Dark_exit_closethesession_close_6317.png" />
+    <None Include="Resources\Dark_32officeicons-31_89708.png" />
+    <None Include="Resources\32officeicons-31_89708.png" />
+    <None Include="Resources\icons8-сканер-штрих-кодов-2-100.png" />
+    <None Include="Resources\icons8-сканер-штрих-кодов-2-100%281%29.png" />
+    <None Include="Resources\icons8-сканер-штрих-кодов-2-100 .png" />
+    <None Include="Resources\robot-eset-57x64.png" />
+    <None Include="Resources\taskbar_list_tarea_9370.png" />
     <Content Include="робот.ico" />
   </ItemGroup>
   <ItemGroup>
