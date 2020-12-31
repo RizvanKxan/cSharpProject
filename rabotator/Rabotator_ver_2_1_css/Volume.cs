@@ -400,7 +400,7 @@ namespace Rabotator_ver_2_1_css
         {
             base.Capture = false;
             Message m = Message.Create(base.Handle, 0xa1, new IntPtr(2), IntPtr.Zero);
-            this.WndProc(ref m);
+            WndProc(ref m);
         }
 
         private void Button1_Click(object sender, EventArgs e)

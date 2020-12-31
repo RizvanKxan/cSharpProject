@@ -135,7 +135,7 @@ namespace Rabotator_ver_2_1_css
             pictureBox7.Capture = false;
 
             Message m = Message.Create(base.Handle, 0xa1, new IntPtr(2), IntPtr.Zero);
-            this.WndProc(ref m);
+            WndProc(ref m);
         }
 
 
@@ -165,6 +165,10 @@ namespace Rabotator_ver_2_1_css
             timer1.Start();
         }
 
-
+        private void PictureBox8_Click(object sender, EventArgs e)
+        {
+            BarcodeGeneration newForm = new BarcodeGeneration();
+            newForm.Show();
+        }
     }
 }

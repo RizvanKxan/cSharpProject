@@ -74,7 +74,7 @@ namespace Rabotator_ver_2_1_css
         {
             panel1.Capture = false;
             Message m = Message.Create(base.Handle, 0xa1, new IntPtr(2), IntPtr.Zero);
-            this.WndProc(ref m);
+            WndProc(ref m);
         }
     }
 }
