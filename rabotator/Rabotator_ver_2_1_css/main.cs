@@ -29,10 +29,12 @@ namespace Rabotator_ver_2_1_css
             int y = Screen.PrimaryScreen.WorkingArea.Height - Screen.PrimaryScreen.WorkingArea.Height;
             Location = new Point(x, y);
             ToolTip t = new ToolTip();
-            t.SetToolTip(pictureBox2, "Выход.");
-            t.SetToolTip(pictureBox1, "Объёмы Юск.");
-            t.SetToolTip(pictureBox3, "Пользователи.");
-            t.SetToolTip(pictureBox4, "Смена номера MDT.");
+            t.SetToolTip(picExit, "Выход.");
+            t.SetToolTip(picVolume, "Объёмы Юск.");
+            t.SetToolTip(picUsers, "Пользователи.");
+            t.SetToolTip(picSkaner, "Смена номера MDT.");
+            t.SetToolTip(picBookmark, "Хранение.");
+            t.SetToolTip(picBarcode, "Генерация штрих-кода.");
 
         }
 
@@ -45,44 +47,38 @@ namespace Rabotator_ver_2_1_css
 
         private void PictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-            pictureBox1.Image = Resources._32officeicons_31_89708;
-            pictureBox1.Width = 77;
-            pictureBox1.Height = 77;
+            picVolume.Image = Resources._32officeicons_31_89708;
+            timer1.Stop();
         }
 
         private void PictureBox1_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox1.Image = Resources.Dark_32officeicons_31_89708;
-            pictureBox1.Width = 77;
-            pictureBox1.Height = 77;
+            picVolume.Image = Resources.Dark_32officeicons_31_89708;
+            timer1.Start();
         }
 
         private void PictureBox3_MouseMove(object sender, MouseEventArgs e)
         {
-            pictureBox3.Image = Resources.robot_eset_57x64;
-            pictureBox3.Width = 77;
-            pictureBox3.Height = 77;
+            picUsers.Image = Resources.robot_eset_57x64;
+            timer1.Stop();
         }
 
         private void PictureBox3_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox3.Image = Resources.Dark_robot_eset_57x64;
-            pictureBox3.Width = 77;
-            pictureBox3.Height = 77;
+            picUsers.Image = Resources.Dark_robot_eset_57x64;
+            timer1.Start();
         }
 
         private void PictureBox2_MouseMove(object sender, MouseEventArgs e)
         {
-            pictureBox2.Image = Resources.exit_closethesession_close_6317;
-            pictureBox2.Width = 77;
-            pictureBox2.Height = 77;
+            picExit.Image = Resources.exit_closethesession_close_6317;
+            timer1.Stop();
         }
 
         private void PictureBox2_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox2.Image = Resources.Dark_exit_closethesession_close_6317;
-            pictureBox2.Width = 77;
-            pictureBox2.Height = 77;
+            picExit.Image = Resources.Dark_exit_closethesession_close_6317;
+            timer1.Start();
         }
 
 
@@ -94,17 +90,14 @@ namespace Rabotator_ver_2_1_css
 
         private void PictureBox4_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox4.Image = Resources.Dark_icons8_сканер_штрих_кодов_2_100;
-            
-            pictureBox4.Width = 77;
-            pictureBox4.Height = 77;
+            picSkaner.Image = Resources.Dark_icons8_сканер_штрих_кодов_2_100;
+            timer1.Start();
         }
 
         private void PictureBox4_MouseMove(object sender, MouseEventArgs e)
         {
-            pictureBox4.Image = Resources.icons8_сканер_штрих_кодов_2_100;
-            pictureBox4.Width = 77;
-            pictureBox4.Height = 77;
+            picSkaner.Image = Resources.icons8_сканер_штрих_кодов_2_100;
+            timer1.Stop();
         }
 
         private void PictureBox5_Click(object sender, EventArgs e)
@@ -115,49 +108,34 @@ namespace Rabotator_ver_2_1_css
 
         private void PictureBox5_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox5.Image = Resources.Dark_taskbar_list_tarea_9370;
-            
-            pictureBox5.Width = 77;
-            pictureBox5.Height = 77;
+            picBookmark.Image = Resources.Dark_taskbar_list_tarea_9370;
+            timer1.Start();
         }
 
         private void PictureBox5_MouseMove(object sender, MouseEventArgs e)
         {
-            pictureBox5.Image = Resources.taskbar_list_tarea_9370;
-            pictureBox5.Width = 77;
-            pictureBox5.Height = 77;
+            picBookmark.Image = Resources.taskbar_list_tarea_9370;
+            timer1.Stop();
         }
 
 
         private void PictureBox7_MouseMove(object sender, MouseEventArgs e)
         {
-            
             pictureBox7.Capture = false;
-
             Message m = Message.Create(base.Handle, 0xa1, new IntPtr(2), IntPtr.Zero);
             WndProc(ref m);
+            timer1.Stop();
         }
 
 
         private void PictureBox7_MouseEnter(object sender, EventArgs e)
         {
-            
-            if (panel6.Height == 485)
-            {
-                panel6.Height = 0;
-            }
-            else
-            {
-                panel6.Height = 485;
-            }
+            panel6.Visible = true;
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            if (panel6.Height == 485)
-            {
-                panel6.Height = 0;
-            }
+            panel6.Visible = false;
         }
 
         private void PictureBox7_MouseLeave(object sender, EventArgs e)
@@ -169,6 +147,30 @@ namespace Rabotator_ver_2_1_css
         {
             BarcodeGeneration newForm = new BarcodeGeneration();
             newForm.Show();
+        }
+
+        private void PictureBox8_MouseMove(object sender, MouseEventArgs e)
+        {
+            picBarcode.Image = Resources.barcoderegular_106329;
+            timer1.Stop();
+        }
+
+        private void PictureBox8_MouseLeave(object sender, EventArgs e)
+        {
+            picBarcode.Image = Resources.Dark_barcoderegular_106329;
+            timer1.Start();
+        }
+
+        private void PictureBox7_Click(object sender, EventArgs e)
+        {
+            if(panel6.Visible == true)
+            {
+                panel6.Visible = false;
+            }
+            else
+            {
+                panel6.Visible = true;
+            }
         }
     }
 }

@@ -1,15 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using System.Diagnostics;
-using System.IO;
-using System.Xml;
-using System.Xml.Linq;
 
 namespace Rabotator_ver_2_1_css
 {
@@ -402,24 +392,6 @@ namespace Rabotator_ver_2_1_css
             Message m = Message.Create(base.Handle, 0xa1, new IntPtr(2), IntPtr.Zero);
             WndProc(ref m);
         }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            Users newForm = new Users();
-            newForm.Show();
-        }
-
-
-
-
-        //////////
-
-
-
-
-
-
-        /////
     }
 }
 

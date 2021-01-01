@@ -271,7 +271,6 @@
             this.button1.TabIndex = 23;
             this.button1.Text = "Доп.информация";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // Volume
             // 
@@ -305,6 +304,7 @@
             this.Name = "Volume";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Работатор V_2_1";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

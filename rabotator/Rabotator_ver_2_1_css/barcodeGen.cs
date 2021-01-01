@@ -2,31 +2,13 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-
 namespace Rabotator_ver_2_1_css
 {
     public partial class BarcodeGeneration : Form
-    {
-
+    {       
         public BarcodeGeneration()
         {
             InitializeComponent();
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            pictureBox1.Visible = true;
-            string barcode = textBox1.Text;
-            try
-            {
-                Zen.Barcode.Code128BarcodeDraw brCode = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
-                pictureBox1.Image = brCode.Draw(barcode,100);
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -62,6 +44,22 @@ namespace Rabotator_ver_2_1_css
             Capture = false;
             Message m = Message.Create(base.Handle, 0xa1, new IntPtr(2), IntPtr.Zero);
             WndProc(ref m);
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string barcode = textBox1.Text;
+                Zen.Barcode.Code128BarcodeDraw brCode = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
+                pictureBox1.Image = brCode.Draw(barcode, 50);
+                pictureBox1.Visible = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ввод не корректен!", "Будьте бдительны!");
+            }
         }
     }
 }

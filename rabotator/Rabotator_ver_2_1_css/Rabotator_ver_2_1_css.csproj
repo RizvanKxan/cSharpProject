@@ -118,12 +118,6 @@
     <Compile Include="MDT.Designer.cs">
       <DependentUpon>MDT.cs</DependentUpon>
     </Compile>
-    <Compile Include="Users.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Users.Designer.cs">
-      <DependentUpon>Users.cs</DependentUpon>
-    </Compile>
     <Compile Include="main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,9 +141,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MDT.resx">
       <DependentUpon>MDT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Users.resx">
-      <DependentUpon>Users.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="main.resx">
       <DependentUpon>main.cs</DependentUpon>
@@ -185,11 +176,11 @@
     <None Include="Resources\Dark_exit_closethesession_close_6317.png" />
     <None Include="Resources\Dark_32officeicons-31_89708.png" />
     <None Include="Resources\32officeicons-31_89708.png" />
-    <None Include="Resources\icons8-сканер-штрих-кодов-2-100.png" />
-    <None Include="Resources\icons8-сканер-штрих-кодов-2-100%281%29.png" />
     <None Include="Resources\icons8-сканер-штрих-кодов-2-100 .png" />
     <None Include="Resources\robot-eset-57x64.png" />
     <None Include="Resources\taskbar_list_tarea_9370.png" />
+    <None Include="Resources\Dark_barcoderegular_106329.png" />
+    <None Include="Resources\barcoderegular_106329.png" />
     <Content Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />

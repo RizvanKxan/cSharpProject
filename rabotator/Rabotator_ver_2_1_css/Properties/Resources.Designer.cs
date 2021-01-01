@@ -91,6 +91,16 @@ namespace Rabotator_ver_2_1_css.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap barcoderegular_106329 {
+            get {
+                object obj = ResourceManager.GetObject("barcoderegular_106329", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на 222222;789
         ///222222;456464
         ///.
@@ -107,6 +117,16 @@ namespace Rabotator_ver_2_1_css.Properties {
         internal static System.Drawing.Bitmap Dark_32officeicons_31_89708 {
             get {
                 object obj = ResourceManager.GetObject("Dark_32officeicons_31_89708", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Dark_barcoderegular_106329 {
+            get {
+                object obj = ResourceManager.GetObject("Dark_barcoderegular_106329", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

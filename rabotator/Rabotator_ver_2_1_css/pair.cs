@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using static Rabotator_ver_2_1_css.Volume;
 
 namespace Rabotator_ver_2_1_css
 {
@@ -40,7 +34,7 @@ namespace Rabotator_ver_2_1_css
                     listB.Add(values[2] + " " + values[1] + " " + values[0]); // фамилия - имя - логин
                     listC.Add(values[1] + " " + values[2] + " " + values[0]); // имя - фамилия - логин
 
-                    dataGridView1.Rows.Add(values[0], values[2], values[1],values[3]);
+                    dataGridView1.Rows.Add(values[0], values[2], values[1]);
                 }
 
                 var test = new AutoCompleteStringCollection();
