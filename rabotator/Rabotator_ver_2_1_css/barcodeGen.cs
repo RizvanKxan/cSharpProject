@@ -13,7 +13,9 @@ namespace Rabotator_ver_2_1_css
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            pageSetupDialog1.ShowDialog();
+           // pageSetupDialog1.ShowDialog();
+            PageSetup newForm = new PageSetup();
+            newForm.Show();
         }
 
         private void Button3_Click(object sender, EventArgs e)
@@ -24,6 +26,16 @@ namespace Rabotator_ver_2_1_css
 
         private void Button4_Click(object sender, EventArgs e)
         {
+            printDocument1.DefaultPageSettings.PaperSize = Data.sizePage;
+            if(Data.orientationPageIsPortrait == true)
+            {
+                printDocument1.DefaultPageSettings.Landscape = false;
+            }
+            else
+            {
+                printDocument1.DefaultPageSettings.Landscape = true;
+            }
+            
             printPreviewDialog1.ShowDialog();
         }
 
@@ -31,7 +43,27 @@ namespace Rabotator_ver_2_1_css
         {
             var bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             pictureBox1.DrawToBitmap(bmp, pictureBox1.ClientRectangle);
-            e.Graphics.DrawImageUnscaled(bmp, 0, 0);
+
+            Rectangle m = e.MarginBounds;
+            
+            if (bmp.Width / (double)bmp.Height > m.Width / (double)m.Height) // image is wider
+            {
+                m.Height = (int)(bmp.Height / (double)bmp.Width * m.Width);
+            }
+            else
+            {
+                m.Width = (int)(bmp.Width / (double)bmp.Height * m.Height);
+            }
+
+            if(Data.sizePage.Width == 595)
+            {
+                e.Graphics.DrawImage(bmp, m);
+            }
+            else
+            {
+                e.Graphics.DrawImage(bmp, e.PageBounds);
+            }
+            
         }
 
         private void Button5_Click(object sender, EventArgs e)

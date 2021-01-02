@@ -135,7 +135,14 @@ namespace Rabotator_ver_2_1_css
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            panel6.Visible = false;
+            if(panel6.Visible == false)
+            {
+                timer1.Stop();
+            }
+            else
+            {
+                panel6.Visible = false;
+            }
         }
 
         private void PictureBox7_MouseLeave(object sender, EventArgs e)
