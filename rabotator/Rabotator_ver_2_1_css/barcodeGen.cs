@@ -9,13 +9,14 @@ namespace Rabotator_ver_2_1_css
         public BarcodeGeneration()
         {
             InitializeComponent();
+            comboBox1.SelectedItem = "A4";
+  
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-           // pageSetupDialog1.ShowDialog();
-            PageSetup newForm = new PageSetup();
-            newForm.Show();
+            pageSetupDialog1.ShowDialog();
+
         }
 
         private void Button3_Click(object sender, EventArgs e)
@@ -35,8 +36,9 @@ namespace Rabotator_ver_2_1_css
             {
                 printDocument1.DefaultPageSettings.Landscape = true;
             }
-            
+            // окно предпросмотра теряет фокус и порой скрывается после появления, разобраться почему
             printPreviewDialog1.ShowDialog();
+            
         }
 
         private void PrintDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -44,29 +46,26 @@ namespace Rabotator_ver_2_1_css
             var bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             pictureBox1.DrawToBitmap(bmp, pictureBox1.ClientRectangle);
 
-            Rectangle m = e.MarginBounds;
-            
-            if (bmp.Width / (double)bmp.Height > m.Width / (double)m.Height) // image is wider
-            {
-                m.Height = (int)(bmp.Height / (double)bmp.Width * m.Width);
-            }
-            else
-            {
-                m.Width = (int)(bmp.Width / (double)bmp.Height * m.Height);
-            }
-
             if(Data.sizePage.Width == 595)
             {
-                e.Graphics.DrawImage(bmp, m);
+                e.Graphics.DrawImage(bmp, 100,100);
+                e.Graphics.DrawString(textBox1.Text,
+                                      new Font("Arial", 8),
+                                      Brushes.Black, 105, 153);
+                // придумать как выровнять текст-подпись по центру изображения
             }
             else
             {
-                e.Graphics.DrawImage(bmp, e.PageBounds);
+                e.Graphics.DrawImage(bmp,1,1,8,4);
+                e.Graphics.DrawString(textBox1.Text,
+                                      new Font("Arial", 0.5f),
+                                      Brushes.Black,
+                                      e.PageBounds.Width / 2 - e.Graphics.MeasureString(textBox1.Text, new Font("Arial", 0.5f)).Width / 2,
+                                      4.9f);
             }
-            
         }
 
-        private void Button5_Click(object sender, EventArgs e)
+        private void Exit_Click(object sender, EventArgs e)
         {
             Close();
         }
@@ -78,11 +77,10 @@ namespace Rabotator_ver_2_1_css
             WndProc(ref m);
         }
 
-        private void TextBox1_TextChanged(object sender, EventArgs e)
+        private void TxtBox1_TextChanged(object sender, EventArgs e)
         {
             try
             {
-
                 string barcode = textBox1.Text;
                 Zen.Barcode.Code128BarcodeDraw brCode = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
                 pictureBox1.Image = brCode.Draw(barcode, 50);
@@ -91,6 +89,20 @@ namespace Rabotator_ver_2_1_css
             catch (Exception)
             {
                 MessageBox.Show("Ввод не корректен!", "Будьте бдительны!");
+            }
+        }
+
+        private void ComboBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.Text == "A4")
+            {
+                Data.sizePage = new System.Drawing.Printing.PaperSize("A4", 595, 842);
+                Data.orientationPageIsPortrait = true;
+            }
+            else
+            {
+                Data.sizePage = new System.Drawing.Printing.PaperSize("Zebra", 6, 10);
+                Data.orientationPageIsPortrait = false;
             }
         }
     }

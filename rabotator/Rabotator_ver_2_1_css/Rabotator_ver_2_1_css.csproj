@@ -96,12 +96,6 @@
       <DependentUpon>barcodeGen.cs</DependentUpon>
     </Compile>
     <Compile Include="Data.cs" />
-    <Compile Include="PageSetup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PageSetup.Designer.cs">
-      <DependentUpon>PageSetup.cs</DependentUpon>
-    </Compile>
     <Compile Include="pair.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,9 +133,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="barcodeGen.resx">
       <DependentUpon>barcodeGen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PageSetup.resx">
-      <DependentUpon>PageSetup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pair.resx">
       <DependentUpon>pair.cs</DependentUpon>

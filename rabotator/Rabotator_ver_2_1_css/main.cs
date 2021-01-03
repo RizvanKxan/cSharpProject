@@ -137,7 +137,7 @@ namespace Rabotator_ver_2_1_css
         {
             if(panel6.Visible == false)
             {
-                timer1.Stop();
+                timer1.Enabled = false;
             }
             else
             {
