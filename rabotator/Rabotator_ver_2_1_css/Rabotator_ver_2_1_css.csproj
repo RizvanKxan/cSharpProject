@@ -55,7 +55,7 @@
     <StartupObject>Rabotator_ver_2_1_css.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>робот.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Floating_Robot-512.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
@@ -182,11 +182,14 @@
     <None Include="Resources\taskbar_list_tarea_9370.png" />
     <None Include="Resources\Dark_barcoderegular_106329.png" />
     <None Include="Resources\barcoderegular_106329.png" />
+    <None Include="Resources\Floating_Robot-512.ico" />
+    <None Include="Resources\mainIcon.ico" />
+    <None Include="Resources\_Floating_Robot-512.png" />
+    <Content Include="Floating_Robot-512.ico" />
     <Content Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\nugetexample.js" />
-    <Content Include="робот.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

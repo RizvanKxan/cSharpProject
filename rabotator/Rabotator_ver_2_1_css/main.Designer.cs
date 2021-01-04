@@ -207,6 +207,7 @@
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureBox7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox7.ErrorImage = null;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
             this.pictureBox7.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.InitialImage")));
             this.pictureBox7.Location = new System.Drawing.Point(0, 0);
@@ -243,6 +244,7 @@
             this.Controls.Add(this.panel6);
             this.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Main";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;

@@ -101,17 +101,6 @@ namespace Rabotator_ver_2_1_css.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на 222222;789
-        ///222222;456464
-        ///.
-        /// </summary>
-        internal static string Bookmarks {
-            get {
-                return ResourceManager.GetString("Bookmarks", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Dark_32officeicons_31_89708 {
@@ -187,6 +176,26 @@ namespace Rabotator_ver_2_1_css.Properties {
         internal static System.Drawing.Bitmap icons8_сканер_штрих_кодов_2_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8_сканер_штрих_кодов_2_100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
+        /// </summary>
+        internal static System.Drawing.Icon mainIcon {
+            get {
+                object obj = ResourceManager.GetObject("mainIcon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mainImage {
+            get {
+                object obj = ResourceManager.GetObject("mainImage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

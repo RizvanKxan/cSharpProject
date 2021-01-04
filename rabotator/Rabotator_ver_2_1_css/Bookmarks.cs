@@ -28,51 +28,117 @@ namespace Rabotator_ver_2_1_css
 
         public class BookmarksList
         {
+            public string Name { get; set; }
             public string Link { get; set; }
             public string Description { get; set; }
 
-            //public string str = "";
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            // указываем путь к файлу csv
-            string pathCsvFile = @"Bookmarks.csv";
-      
-            StreamWriter writer = new StreamWriter(pathCsvFile, true);
-            writer.WriteLine(textBox1.Text + ";" + textBox2.Text);
-            writer.Close();
-           
-
+            System.Diagnostics.Process.Start("http://vk.com");
         }
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void Panel2_MouseClick(object sender, MouseEventArgs e)
         {
-            dataGridView1.Rows.Clear();
-           // Resources.Bookmarks.Save();
-
-            using (var reader = new StreamReader(@"Bookmarks.csv"))
-            {
-                List<string> listA = new List<string>();
-
-                while (!reader.EndOfStream)
-                {
-                    var line = reader.ReadLine();
-                    var values = line.Split(';');
-
-                    listA.Add(values[0] + " " + values[1]);
-                    dataGridView1.Rows.Add(values[0], values[1]);
-                }
-
-            }
-
-
-
+            dataGridView1.Visible = true;
+            pictureBox2.Visible = true;
         }
 
-        private void Bookmarks_Load(object sender, EventArgs e)
+        private void PictureBox2_Click(object sender, EventArgs e)
         {
-            File.WriteAllText(@"Bookmarks.csv", Resources.Bookmarks);
+            dataGridView1.Visible = false;
+            pictureBox2.Visible = false;
+        }
+
+        private void Panel3_MouseClick(object sender, MouseEventArgs e)
+        {
+            dataGridView1.Visible = true;
+            pictureBox2.Visible = true;
+        }
+
+        private void Panel4_MouseClick(object sender, MouseEventArgs e)
+        {
+            dataGridView1.Visible = true;
+            pictureBox2.Visible = true;
+        }
+
+        private void Panel5_MouseClick(object sender, MouseEventArgs e)
+        {
+            dataGridView1.Visible = true;
+            pictureBox2.Visible = true;
+        }
+
+        private void Panel6_MouseClick(object sender, MouseEventArgs e)
+        {
+            dataGridView1.Visible = true;
+            pictureBox2.Visible = true;
+        }
+
+        private void Panel7_MouseClick(object sender, MouseEventArgs e)
+        {
+            dataGridView1.Visible = true;
+            pictureBox2.Visible = true;
+        }
+
+        private void Panel2_MouseEnter(object sender, EventArgs e)
+        {
+            panel2.BackColor = System.Drawing.Color.FromArgb(10, 6, 49);
+        }
+
+        private void Panel2_MouseLeave(object sender, EventArgs e)
+        {
+            panel2.BackColor = System.Drawing.Color.FromArgb(34, 36, 49);
+        }
+
+        private void Panel3_MouseEnter(object sender, EventArgs e)
+        {
+            panel3.BackColor = System.Drawing.Color.FromArgb(10, 6, 49);
+        }
+
+        private void Panel4_MouseEnter(object sender, EventArgs e)
+        {
+            panel4.BackColor = System.Drawing.Color.FromArgb(10, 6, 49);
+        }
+
+        private void Panel5_MouseEnter(object sender, EventArgs e)
+        {
+            panel5.BackColor = System.Drawing.Color.FromArgb(10, 6, 49);
+        }
+
+        private void Panel6_MouseEnter(object sender, EventArgs e)
+        {
+            panel6.BackColor = System.Drawing.Color.FromArgb(10, 6, 49);
+        }
+
+        private void Panel7_MouseEnter(object sender, EventArgs e)
+        {
+            panel7.BackColor = System.Drawing.Color.FromArgb(10, 6, 49);
+        }
+
+        private void Panel3_MouseLeave(object sender, EventArgs e)
+        {
+            panel3.BackColor = System.Drawing.Color.FromArgb(34, 36, 49);
+        }
+
+        private void Panel4_MouseLeave(object sender, EventArgs e)
+        {
+            panel4.BackColor = System.Drawing.Color.FromArgb(34, 36, 49);
+        }
+
+        private void Panel5_MouseLeave(object sender, EventArgs e)
+        {
+            panel5.BackColor = System.Drawing.Color.FromArgb(34, 36, 49);
+        }
+
+        private void Panel6_MouseLeave(object sender, EventArgs e)
+        {
+            panel6.BackColor = System.Drawing.Color.FromArgb(34, 36, 49);
+        }
+
+        private void Panel7_MouseLeave(object sender, EventArgs e)
+        {
+            panel7.BackColor = System.Drawing.Color.FromArgb(34, 36, 49);
         }
     }
 }

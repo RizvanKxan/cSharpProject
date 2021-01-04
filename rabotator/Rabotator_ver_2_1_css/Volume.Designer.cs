@@ -45,7 +45,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -255,23 +254,6 @@
             this.pictureBox1.WaitOnLoad = true;
             this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
-            // button1
-            // 
-            this.button1.AutoSize = true;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.button1.FlatAppearance.BorderSize = 10;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.Location = new System.Drawing.Point(468, 205);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 30);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Доп.информация";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Volume
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,8 +262,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(703, 270);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(703, 242);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label1);
@@ -300,6 +281,7 @@
             this.Controls.Add(this.label3);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Volume";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -331,7 +313,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
     }
 }
 
