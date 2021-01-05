@@ -1,17 +1,16 @@
-﻿using Rabotator_ver_2_1_css.Properties;
-using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System;
 using System.Windows.Forms;
 
-namespace Rabotator_ver_2_1_css
+namespace Rabotator
 {
-    public partial class Bookmarks : Form
+    public partial class Utilities : Form
     {
-        public Bookmarks()
+        public Utilities()
         {
             InitializeComponent();
-            
+            SlowShowAndCloseForm ss = new SlowShowAndCloseForm(this);
+            ss.Show();
+
         }
 
         private void Bookmarks_MouseDown(object sender, MouseEventArgs e)
@@ -23,16 +22,11 @@ namespace Rabotator_ver_2_1_css
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            Close();
+            SlowShowAndCloseForm ss = new SlowShowAndCloseForm(this);
+            ss.Close();
         }
 
-        public class BookmarksList
-        {
-            public string Name { get; set; }
-            public string Link { get; set; }
-            public string Description { get; set; }
-
-        }
+       
 
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -41,44 +35,44 @@ namespace Rabotator_ver_2_1_css
 
         private void Panel2_MouseClick(object sender, MouseEventArgs e)
         {
-            dataGridView1.Visible = true;
-            pictureBox2.Visible = true;
+
+
         }
 
         private void PictureBox2_Click(object sender, EventArgs e)
         {
-            dataGridView1.Visible = false;
-            pictureBox2.Visible = false;
+
+
         }
 
         private void Panel3_MouseClick(object sender, MouseEventArgs e)
         {
-            dataGridView1.Visible = true;
-            pictureBox2.Visible = true;
+
+
         }
 
         private void Panel4_MouseClick(object sender, MouseEventArgs e)
         {
-            dataGridView1.Visible = true;
-            pictureBox2.Visible = true;
+
+
         }
 
         private void Panel5_MouseClick(object sender, MouseEventArgs e)
         {
-            dataGridView1.Visible = true;
-            pictureBox2.Visible = true;
+
+
         }
 
         private void Panel6_MouseClick(object sender, MouseEventArgs e)
         {
-            dataGridView1.Visible = true;
-            pictureBox2.Visible = true;
+
+
         }
 
         private void Panel7_MouseClick(object sender, MouseEventArgs e)
         {
-            dataGridView1.Visible = true;
-            pictureBox2.Visible = true;
+
+
         }
 
         private void Panel2_MouseEnter(object sender, EventArgs e)

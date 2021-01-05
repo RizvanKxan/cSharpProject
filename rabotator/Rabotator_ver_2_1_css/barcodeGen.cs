@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Rabotator_ver_2_1_css
+namespace Rabotator
 {
     public partial class BarcodeGeneration : Form
     {       
@@ -10,7 +10,8 @@ namespace Rabotator_ver_2_1_css
         {
             InitializeComponent();
             comboBox1.SelectedItem = "A4";
-  
+            SlowShowAndCloseForm ss = new SlowShowAndCloseForm(this);
+            ss.Show();
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -67,7 +68,8 @@ namespace Rabotator_ver_2_1_css
 
         private void Exit_Click(object sender, EventArgs e)
         {
-            Close();
+            SlowShowAndCloseForm ss = new SlowShowAndCloseForm(this);
+            ss.Close();
         }
 
         private void BarcodeGeneration_MouseDown(object sender, MouseEventArgs e)

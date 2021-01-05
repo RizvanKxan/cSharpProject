@@ -1,4 +1,4 @@
-﻿namespace Rabotator_ver_2_1_css
+﻿namespace Rabotator
 {
     partial class BarcodeGeneration
     {
@@ -186,6 +186,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "BarcodeGeneration";
+            this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Generation Barcode";
             this.TopMost = true;

@@ -1,4 +1,4 @@
-﻿namespace Rabotator_ver_2_1_css
+﻿namespace Rabotator
 {
     partial class Volume
     {
@@ -284,6 +284,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Volume";
+            this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Работатор V_2_1";
             this.TopMost = true;

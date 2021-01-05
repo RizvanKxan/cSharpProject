@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
-namespace Rabotator_ver_2_1_css
+namespace Rabotator
 {
     public partial class Pair : Form
     {
         public Pair()
         {
             InitializeComponent();
+            SlowShowAndCloseForm ss = new SlowShowAndCloseForm(this);
+            ss.Show();
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            Close();
+            SlowShowAndCloseForm ss = new SlowShowAndCloseForm(this);
+            ss.Close();
         }
 
         private void Pair_Load(object sender, EventArgs e)

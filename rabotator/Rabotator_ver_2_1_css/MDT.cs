@@ -2,18 +2,21 @@
 using System.Windows.Forms;
 using System.Xml;
 
-namespace Rabotator_ver_2_1_css
+namespace Rabotator
 {
     public partial class MDT : Form
     {
         public MDT()
         {
             InitializeComponent();
+            SlowShowAndCloseForm ss = new SlowShowAndCloseForm(this);
+            ss.Show();
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            Close();
+            SlowShowAndCloseForm ss = new SlowShowAndCloseForm(this);
+            ss.Close();
         }
 
         private void Form2_MouseDown(object sender, MouseEventArgs e)

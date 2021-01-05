@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{7F4AE8CF-1085-4EDA-AA65-6D115BB8E108}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Rabotator_ver_2_1_css</RootNamespace>
-    <AssemblyName>Rabotator_ver_2_1_css</AssemblyName>
+    <RootNamespace>Rabotator</RootNamespace>
+    <AssemblyName>Rabotator</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -52,7 +52,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Rabotator_ver_2_1_css.Program</StartupObject>
+    <StartupObject>Rabotator.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Resources\Floating_Robot-512.ico</ApplicationIcon>
@@ -83,11 +83,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bookmarks.cs">
+    <Compile Include="GlobalFunction.cs" />
+    <Compile Include="Utilities.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bookmarks.Designer.cs">
-      <DependentUpon>Bookmarks.cs</DependentUpon>
+    <Compile Include="Utilities.Designer.cs">
+      <DependentUpon>Utilities.cs</DependentUpon>
     </Compile>
     <Compile Include="barcodeGen.cs">
       <SubType>Form</SubType>
@@ -127,8 +128,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Bookmarks.resx">
-      <DependentUpon>Bookmarks.cs</DependentUpon>
+    <EmbeddedResource Include="Utilities.resx">
+      <DependentUpon>Utilities.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="barcodeGen.resx">

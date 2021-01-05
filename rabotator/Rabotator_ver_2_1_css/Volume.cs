@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Rabotator_ver_2_1_css
+namespace Rabotator
 {
     public partial class Volume : Form
     {
@@ -9,7 +9,8 @@ namespace Rabotator_ver_2_1_css
         public Volume()
         {
             InitializeComponent();
-
+            SlowShowAndCloseForm ss = new SlowShowAndCloseForm(this);
+            ss.Show();
         }
         // считаем объём если входные данные сантиметры 
         private void Volume_San(decimal a, decimal b, decimal c, decimal d)
@@ -377,7 +378,8 @@ namespace Rabotator_ver_2_1_css
         // закрываем приложение
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            Close();
+            SlowShowAndCloseForm ss = new SlowShowAndCloseForm(this);
+            ss.Close();
         }
         // при загрузке формы и при наведении на картинки всплывает подсказка
         private void Form1_Load(object sender, EventArgs e)

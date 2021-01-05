@@ -1,20 +1,24 @@
-﻿using Rabotator_ver_2_1_css.Properties;
+﻿using Rabotator.Properties;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Rabotator_ver_2_1_css
+namespace Rabotator
 {
     public partial class Main : Form
     {
+
         public Main()
         {
             InitializeComponent();
+            SlowShowAndCloseForm ss = new SlowShowAndCloseForm(this);
+            ss.Show();
         }
 
         private void PictureBox2_Click(object sender, EventArgs e)
         {
-            Close();
+            SlowShowAndCloseForm ss = new SlowShowAndCloseForm(this);
+            ss.Close();
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
@@ -35,7 +39,6 @@ namespace Rabotator_ver_2_1_css
             t.SetToolTip(picSkaner, "Смена номера MDT.");
             t.SetToolTip(picBookmark, "Хранение.");
             t.SetToolTip(picBarcode, "Генерация штрих-кода.");
-
         }
 
 
@@ -102,7 +105,7 @@ namespace Rabotator_ver_2_1_css
 
         private void PictureBox5_Click(object sender, EventArgs e)
         {
-            Bookmarks newForm = new Bookmarks();
+            Utilities newForm = new Utilities();
             newForm.Show();
         }
 
@@ -179,5 +182,6 @@ namespace Rabotator_ver_2_1_css
                 panel6.Visible = true;
             }
         }
+
     }
 }

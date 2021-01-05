@@ -1,4 +1,4 @@
-﻿namespace Rabotator_ver_2_1_css
+﻿namespace Rabotator
 {
     partial class Main
     {
@@ -41,6 +41,7 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.exitTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picVolume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUsers)).BeginInit();
@@ -56,10 +57,10 @@
             // picVolume
             // 
             this.picVolume.BackColor = System.Drawing.Color.Transparent;
-            this.picVolume.BackgroundImage = global::Rabotator_ver_2_1_css.Properties.Resources._7784ebb03fe8a08c3cf65cfc3d1409b9_1_;
+            this.picVolume.BackgroundImage = global::Rabotator.Properties.Resources._7784ebb03fe8a08c3cf65cfc3d1409b9_1_;
             this.picVolume.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picVolume.Cursor = System.Windows.Forms.Cursors.Default;
-            this.picVolume.Image = global::Rabotator_ver_2_1_css.Properties.Resources.Dark_32officeicons_31_89708;
+            this.picVolume.Image = global::Rabotator.Properties.Resources.Dark_32officeicons_31_89708;
             this.picVolume.InitialImage = ((System.Drawing.Image)(resources.GetObject("picVolume.InitialImage")));
             this.picVolume.Location = new System.Drawing.Point(34, 103);
             this.picVolume.Name = "picVolume";
@@ -74,10 +75,10 @@
             // 
             // picExit
             // 
-            this.picExit.BackgroundImage = global::Rabotator_ver_2_1_css.Properties.Resources._7784ebb03fe8a08c3cf65cfc3d1409b9_1_;
+            this.picExit.BackgroundImage = global::Rabotator.Properties.Resources._7784ebb03fe8a08c3cf65cfc3d1409b9_1_;
             this.picExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picExit.Cursor = System.Windows.Forms.Cursors.Default;
-            this.picExit.Image = global::Rabotator_ver_2_1_css.Properties.Resources.Dark_exit_closethesession_close_6317;
+            this.picExit.Image = global::Rabotator.Properties.Resources.Dark_exit_closethesession_close_6317;
             this.picExit.InitialImage = ((System.Drawing.Image)(resources.GetObject("picExit.InitialImage")));
             this.picExit.Location = new System.Drawing.Point(34, 488);
             this.picExit.Name = "picExit";
@@ -98,10 +99,10 @@
             // 
             // picUsers
             // 
-            this.picUsers.BackgroundImage = global::Rabotator_ver_2_1_css.Properties.Resources._7784ebb03fe8a08c3cf65cfc3d1409b9_1_;
+            this.picUsers.BackgroundImage = global::Rabotator.Properties.Resources._7784ebb03fe8a08c3cf65cfc3d1409b9_1_;
             this.picUsers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picUsers.Cursor = System.Windows.Forms.Cursors.Default;
-            this.picUsers.Image = global::Rabotator_ver_2_1_css.Properties.Resources.Dark_robot_eset_57x64;
+            this.picUsers.Image = global::Rabotator.Properties.Resources.Dark_robot_eset_57x64;
             this.picUsers.InitialImage = ((System.Drawing.Image)(resources.GetObject("picUsers.InitialImage")));
             this.picUsers.Location = new System.Drawing.Point(34, 334);
             this.picUsers.Name = "picUsers";
@@ -117,10 +118,10 @@
             // picSkaner
             // 
             this.picSkaner.BackColor = System.Drawing.Color.Black;
-            this.picSkaner.BackgroundImage = global::Rabotator_ver_2_1_css.Properties.Resources._7784ebb03fe8a08c3cf65cfc3d1409b9_1_;
+            this.picSkaner.BackgroundImage = global::Rabotator.Properties.Resources._7784ebb03fe8a08c3cf65cfc3d1409b9_1_;
             this.picSkaner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picSkaner.Cursor = System.Windows.Forms.Cursors.Default;
-            this.picSkaner.Image = global::Rabotator_ver_2_1_css.Properties.Resources.Dark_icons8_сканер_штрих_кодов_2_100;
+            this.picSkaner.Image = global::Rabotator.Properties.Resources.Dark_icons8_сканер_штрих_кодов_2_100;
             this.picSkaner.InitialImage = ((System.Drawing.Image)(resources.GetObject("picSkaner.InitialImage")));
             this.picSkaner.Location = new System.Drawing.Point(34, 180);
             this.picSkaner.Name = "picSkaner";
@@ -135,10 +136,10 @@
             // 
             // picBookmark
             // 
-            this.picBookmark.BackgroundImage = global::Rabotator_ver_2_1_css.Properties.Resources._7784ebb03fe8a08c3cf65cfc3d1409b9_1_;
+            this.picBookmark.BackgroundImage = global::Rabotator.Properties.Resources._7784ebb03fe8a08c3cf65cfc3d1409b9_1_;
             this.picBookmark.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picBookmark.Cursor = System.Windows.Forms.Cursors.Default;
-            this.picBookmark.Image = global::Rabotator_ver_2_1_css.Properties.Resources.Dark_taskbar_list_tarea_9370;
+            this.picBookmark.Image = global::Rabotator.Properties.Resources.Dark_taskbar_list_tarea_9370;
             this.picBookmark.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBookmark.InitialImage")));
             this.picBookmark.Location = new System.Drawing.Point(34, 257);
             this.picBookmark.Name = "picBookmark";
@@ -170,10 +171,10 @@
             // picBarcode
             // 
             this.picBarcode.BackColor = System.Drawing.Color.Transparent;
-            this.picBarcode.BackgroundImage = global::Rabotator_ver_2_1_css.Properties.Resources._7784ebb03fe8a08c3cf65cfc3d1409b9_1_;
+            this.picBarcode.BackgroundImage = global::Rabotator.Properties.Resources._7784ebb03fe8a08c3cf65cfc3d1409b9_1_;
             this.picBarcode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picBarcode.Cursor = System.Windows.Forms.Cursors.Default;
-            this.picBarcode.Image = global::Rabotator_ver_2_1_css.Properties.Resources.Dark_barcoderegular_106329;
+            this.picBarcode.Image = global::Rabotator.Properties.Resources.Dark_barcoderegular_106329;
             this.picBarcode.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBarcode.InitialImage")));
             this.picBarcode.Location = new System.Drawing.Point(34, 411);
             this.picBarcode.Name = "picBarcode";
@@ -247,6 +248,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Main";
+            this.Opacity = 0D;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Rabotator";
@@ -279,5 +281,6 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox picVolume;
         private System.Windows.Forms.PictureBox picBarcode;
+        private System.Windows.Forms.Timer exitTimer;
     }
 }
