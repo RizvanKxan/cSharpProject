@@ -83,7 +83,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GlobalFunction.cs" />
+    <Compile Include="SlowShowAndCloseForm.cs" />
+    <Compile Include="Small_utilities\Calculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Small_utilities\Calculator.Designer.cs">
+      <DependentUpon>Calculator.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilities.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Small_utilities\Calculator.resx">
+      <DependentUpon>Calculator.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Utilities.resx">
       <DependentUpon>Utilities.cs</DependentUpon>
       <SubType>Designer</SubType>

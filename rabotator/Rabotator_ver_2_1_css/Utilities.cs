@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Rabotator.Small_utilities;
 
 namespace Rabotator
 {
@@ -35,7 +36,10 @@ namespace Rabotator
 
         private void Panel2_MouseClick(object sender, MouseEventArgs e)
         {
-
+            Calculator newForm = new Calculator();
+            newForm.Show();
+            SlowShowAndCloseForm ss = new SlowShowAndCloseForm(this);
+            ss.Close();
 
         }
 
