@@ -31,63 +31,31 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calculator));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.valueLabelPlus = new System.Windows.Forms.Label();
+            this.valueLabel7 = new System.Windows.Forms.Label();
+            this.valueLabelDot = new System.Windows.Forms.Label();
+            this.valueLabelDel = new System.Windows.Forms.Label();
+            this.valueLabel8 = new System.Windows.Forms.Label();
+            this.valueLabel9 = new System.Windows.Forms.Label();
+            this.valueLabel0 = new System.Windows.Forms.Label();
+            this.valueLabelSlash = new System.Windows.Forms.Label();
+            this.valueLabelMinus = new System.Windows.Forms.Label();
+            this.valueLabel4 = new System.Windows.Forms.Label();
+            this.valueLabel3 = new System.Windows.Forms.Label();
+            this.valueLabel5 = new System.Windows.Forms.Label();
+            this.valueLabel2 = new System.Windows.Forms.Label();
+            this.valueLabel6 = new System.Windows.Forms.Label();
+            this.valueLabel1 = new System.Windows.Forms.Label();
+            this.valueLabelStar = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel12.SuspendLayout();
-            this.panel13.SuspendLayout();
-            this.panel14.SuspendLayout();
-            this.panel15.SuspendLayout();
-            this.panel16.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Rabotator.Properties.Resources.Dark_exit_closethesession_close_6317;
-            this.pictureBox1.Location = new System.Drawing.Point(301, 1);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(29, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -99,382 +67,327 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.panel16, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.panel15, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.panel14, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.panel13, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.panel12, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.panel11, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.panel10, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.panel9, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.panel8, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel7, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel6, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel5, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel4, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel3, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(-4, 123);
+            this.tableLayoutPanel1.Controls.Add(this.valueLabelPlus, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.valueLabel7, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.valueLabelDot, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.valueLabelDel, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.valueLabel8, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.valueLabel9, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.valueLabel0, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.valueLabelSlash, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.valueLabelMinus, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.valueLabel4, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.valueLabel3, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.valueLabel5, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.valueLabel2, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.valueLabel6, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.valueLabel1, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.valueLabelStar, 3, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 82);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(334, 294);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(331, 294);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // panel1
+            // valueLabelPlus
             // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(77, 67);
-            this.panel1.TabIndex = 0;
+            this.valueLabelPlus.AutoSize = true;
+            this.valueLabelPlus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.valueLabelPlus.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.valueLabelPlus.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.valueLabelPlus.Location = new System.Drawing.Point(250, 220);
+            this.valueLabelPlus.Name = "valueLabelPlus";
+            this.valueLabelPlus.Size = new System.Drawing.Size(77, 73);
+            this.valueLabelPlus.TabIndex = 0;
+            this.valueLabelPlus.Text = "+";
+            this.valueLabelPlus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.valueLabelPlus.Click += new System.EventHandler(this.Label_Click);
+            this.valueLabelPlus.MouseLeave += new System.EventHandler(this.Label_MouseLeave);
+            this.valueLabelPlus.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Label_MouseMove);
             // 
-            // panel2
+            // valueLabel7
             // 
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(86, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(77, 67);
-            this.panel2.TabIndex = 1;
+            this.valueLabel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.valueLabel7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.valueLabel7.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.valueLabel7.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.valueLabel7.Location = new System.Drawing.Point(1, 1);
+            this.valueLabel7.Margin = new System.Windows.Forms.Padding(0);
+            this.valueLabel7.Name = "valueLabel7";
+            this.valueLabel7.Size = new System.Drawing.Size(81, 72);
+            this.valueLabel7.TabIndex = 0;
+            this.valueLabel7.Text = "7";
+            this.valueLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.valueLabel7.Click += new System.EventHandler(this.Label_Click);
+            this.valueLabel7.MouseLeave += new System.EventHandler(this.Label_MouseLeave);
+            this.valueLabel7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Label_MouseMove);
             // 
-            // panel3
+            // valueLabelDot
             // 
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(169, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(77, 67);
-            this.panel3.TabIndex = 2;
+            this.valueLabelDot.AutoSize = true;
+            this.valueLabelDot.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.valueLabelDot.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.valueLabelDot.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.valueLabelDot.Location = new System.Drawing.Point(86, 220);
+            this.valueLabelDot.Name = "valueLabelDot";
+            this.valueLabelDot.Size = new System.Drawing.Size(75, 73);
+            this.valueLabelDot.TabIndex = 0;
+            this.valueLabelDot.Text = ".";
+            this.valueLabelDot.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.valueLabelDot.Click += new System.EventHandler(this.Label_Click);
+            this.valueLabelDot.MouseLeave += new System.EventHandler(this.Label_MouseLeave);
+            this.valueLabelDot.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Label_MouseMove);
             // 
-            // panel4
+            // valueLabelDel
             // 
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(252, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(79, 67);
-            this.panel4.TabIndex = 3;
+            this.valueLabelDel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.valueLabelDel.Font = new System.Drawing.Font("Cambria", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.valueLabelDel.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.valueLabelDel.Location = new System.Drawing.Point(168, 220);
+            this.valueLabelDel.Name = "valueLabelDel";
+            this.valueLabelDel.Size = new System.Drawing.Size(75, 73);
+            this.valueLabelDel.TabIndex = 0;
+            this.valueLabelDel.Text = "DEL";
+            this.valueLabelDel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.valueLabelDel.Click += new System.EventHandler(this.ValueLabelDel_Click);
+            this.valueLabelDel.MouseLeave += new System.EventHandler(this.Label_MouseLeave);
+            this.valueLabelDel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Label_MouseMove);
             // 
-            // panel5
+            // valueLabel8
             // 
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 76);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(77, 67);
-            this.panel5.TabIndex = 4;
+            this.valueLabel8.AutoSize = true;
+            this.valueLabel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.valueLabel8.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.valueLabel8.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.valueLabel8.Location = new System.Drawing.Point(86, 1);
+            this.valueLabel8.Name = "valueLabel8";
+            this.valueLabel8.Size = new System.Drawing.Size(75, 72);
+            this.valueLabel8.TabIndex = 0;
+            this.valueLabel8.Text = "8";
+            this.valueLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.valueLabel8.Click += new System.EventHandler(this.Label_Click);
+            this.valueLabel8.MouseLeave += new System.EventHandler(this.Label_MouseLeave);
+            this.valueLabel8.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Label_MouseMove);
             // 
-            // panel6
+            // valueLabel9
             // 
-            this.panel6.Controls.Add(this.label6);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(86, 76);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(77, 67);
-            this.panel6.TabIndex = 5;
+            this.valueLabel9.AutoSize = true;
+            this.valueLabel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.valueLabel9.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.valueLabel9.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.valueLabel9.Location = new System.Drawing.Point(168, 1);
+            this.valueLabel9.Name = "valueLabel9";
+            this.valueLabel9.Size = new System.Drawing.Size(75, 72);
+            this.valueLabel9.TabIndex = 0;
+            this.valueLabel9.Text = "9";
+            this.valueLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.valueLabel9.Click += new System.EventHandler(this.Label_Click);
+            this.valueLabel9.MouseLeave += new System.EventHandler(this.Label_MouseLeave);
+            this.valueLabel9.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Label_MouseMove);
             // 
-            // panel7
+            // valueLabel0
             // 
-            this.panel7.Controls.Add(this.label7);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(169, 76);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(77, 67);
-            this.panel7.TabIndex = 6;
+            this.valueLabel0.AutoSize = true;
+            this.valueLabel0.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.valueLabel0.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.valueLabel0.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.valueLabel0.Location = new System.Drawing.Point(4, 220);
+            this.valueLabel0.Name = "valueLabel0";
+            this.valueLabel0.Size = new System.Drawing.Size(75, 73);
+            this.valueLabel0.TabIndex = 0;
+            this.valueLabel0.Text = "0";
+            this.valueLabel0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.valueLabel0.Click += new System.EventHandler(this.Label_Click);
+            this.valueLabel0.MouseLeave += new System.EventHandler(this.Label_MouseLeave);
+            this.valueLabel0.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Label_MouseMove);
             // 
-            // panel8
+            // valueLabelSlash
             // 
-            this.panel8.Controls.Add(this.label8);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(252, 76);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(79, 67);
-            this.panel8.TabIndex = 7;
+            this.valueLabelSlash.AutoSize = true;
+            this.valueLabelSlash.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.valueLabelSlash.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.valueLabelSlash.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.valueLabelSlash.Location = new System.Drawing.Point(250, 1);
+            this.valueLabelSlash.Name = "valueLabelSlash";
+            this.valueLabelSlash.Size = new System.Drawing.Size(77, 72);
+            this.valueLabelSlash.TabIndex = 0;
+            this.valueLabelSlash.Text = "/";
+            this.valueLabelSlash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.valueLabelSlash.Click += new System.EventHandler(this.Label_Click);
+            this.valueLabelSlash.MouseLeave += new System.EventHandler(this.Label_MouseLeave);
+            this.valueLabelSlash.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Label_MouseMove);
             // 
-            // panel9
+            // valueLabelMinus
             // 
-            this.panel9.Controls.Add(this.label9);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(3, 149);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(77, 67);
-            this.panel9.TabIndex = 8;
+            this.valueLabelMinus.AutoSize = true;
+            this.valueLabelMinus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.valueLabelMinus.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.valueLabelMinus.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.valueLabelMinus.Location = new System.Drawing.Point(250, 147);
+            this.valueLabelMinus.Name = "valueLabelMinus";
+            this.valueLabelMinus.Size = new System.Drawing.Size(77, 72);
+            this.valueLabelMinus.TabIndex = 0;
+            this.valueLabelMinus.Text = "-";
+            this.valueLabelMinus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.valueLabelMinus.Click += new System.EventHandler(this.Label_Click);
+            this.valueLabelMinus.MouseLeave += new System.EventHandler(this.Label_MouseLeave);
+            this.valueLabelMinus.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Label_MouseMove);
             // 
-            // panel10
+            // valueLabel4
             // 
-            this.panel10.Controls.Add(this.label10);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(86, 149);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(77, 67);
-            this.panel10.TabIndex = 9;
+            this.valueLabel4.AutoSize = true;
+            this.valueLabel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.valueLabel4.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.valueLabel4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.valueLabel4.Location = new System.Drawing.Point(4, 74);
+            this.valueLabel4.Name = "valueLabel4";
+            this.valueLabel4.Size = new System.Drawing.Size(75, 72);
+            this.valueLabel4.TabIndex = 0;
+            this.valueLabel4.Text = "4";
+            this.valueLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.valueLabel4.Click += new System.EventHandler(this.Label_Click);
+            this.valueLabel4.MouseLeave += new System.EventHandler(this.Label_MouseLeave);
+            this.valueLabel4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Label_MouseMove);
             // 
-            // panel11
+            // valueLabel3
             // 
-            this.panel11.Controls.Add(this.label11);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(169, 149);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(77, 67);
-            this.panel11.TabIndex = 10;
+            this.valueLabel3.AutoSize = true;
+            this.valueLabel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.valueLabel3.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.valueLabel3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.valueLabel3.Location = new System.Drawing.Point(168, 147);
+            this.valueLabel3.Name = "valueLabel3";
+            this.valueLabel3.Size = new System.Drawing.Size(75, 72);
+            this.valueLabel3.TabIndex = 0;
+            this.valueLabel3.Text = "3";
+            this.valueLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.valueLabel3.Click += new System.EventHandler(this.Label_Click);
+            this.valueLabel3.MouseLeave += new System.EventHandler(this.Label_MouseLeave);
+            this.valueLabel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Label_MouseMove);
             // 
-            // panel12
+            // valueLabel5
             // 
-            this.panel12.Controls.Add(this.label12);
-            this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel12.Location = new System.Drawing.Point(252, 149);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(79, 67);
-            this.panel12.TabIndex = 11;
+            this.valueLabel5.AutoSize = true;
+            this.valueLabel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.valueLabel5.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.valueLabel5.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.valueLabel5.Location = new System.Drawing.Point(86, 74);
+            this.valueLabel5.Name = "valueLabel5";
+            this.valueLabel5.Size = new System.Drawing.Size(75, 72);
+            this.valueLabel5.TabIndex = 0;
+            this.valueLabel5.Text = "5";
+            this.valueLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.valueLabel5.Click += new System.EventHandler(this.Label_Click);
+            this.valueLabel5.MouseLeave += new System.EventHandler(this.Label_MouseLeave);
+            this.valueLabel5.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Label_MouseMove);
             // 
-            // panel13
+            // valueLabel2
             // 
-            this.panel13.Controls.Add(this.label13);
-            this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel13.Location = new System.Drawing.Point(3, 222);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(77, 69);
-            this.panel13.TabIndex = 12;
-            this.panel13.MouseLeave += new System.EventHandler(this.Panel13_MouseLeave);
-            this.panel13.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Panel13_MouseMove);
+            this.valueLabel2.AutoSize = true;
+            this.valueLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.valueLabel2.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.valueLabel2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.valueLabel2.Location = new System.Drawing.Point(86, 147);
+            this.valueLabel2.Name = "valueLabel2";
+            this.valueLabel2.Size = new System.Drawing.Size(75, 72);
+            this.valueLabel2.TabIndex = 0;
+            this.valueLabel2.Text = "2";
+            this.valueLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.valueLabel2.Click += new System.EventHandler(this.Label_Click);
+            this.valueLabel2.MouseLeave += new System.EventHandler(this.Label_MouseLeave);
+            this.valueLabel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Label_MouseMove);
             // 
-            // panel14
+            // valueLabel6
             // 
-            this.panel14.Controls.Add(this.label14);
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel14.Location = new System.Drawing.Point(86, 222);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(77, 69);
-            this.panel14.TabIndex = 13;
+            this.valueLabel6.AutoSize = true;
+            this.valueLabel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.valueLabel6.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.valueLabel6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.valueLabel6.Location = new System.Drawing.Point(168, 74);
+            this.valueLabel6.Name = "valueLabel6";
+            this.valueLabel6.Size = new System.Drawing.Size(75, 72);
+            this.valueLabel6.TabIndex = 0;
+            this.valueLabel6.Text = "6";
+            this.valueLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.valueLabel6.Click += new System.EventHandler(this.Label_Click);
+            this.valueLabel6.MouseLeave += new System.EventHandler(this.Label_MouseLeave);
+            this.valueLabel6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Label_MouseMove);
             // 
-            // panel15
+            // valueLabel1
             // 
-            this.panel15.Controls.Add(this.label15);
-            this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel15.Location = new System.Drawing.Point(169, 222);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(77, 69);
-            this.panel15.TabIndex = 14;
+            this.valueLabel1.AutoSize = true;
+            this.valueLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.valueLabel1.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.valueLabel1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.valueLabel1.Location = new System.Drawing.Point(4, 147);
+            this.valueLabel1.Name = "valueLabel1";
+            this.valueLabel1.Size = new System.Drawing.Size(75, 72);
+            this.valueLabel1.TabIndex = 0;
+            this.valueLabel1.Text = "1";
+            this.valueLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.valueLabel1.Click += new System.EventHandler(this.Label_Click);
+            this.valueLabel1.MouseLeave += new System.EventHandler(this.Label_MouseLeave);
+            this.valueLabel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Label_MouseMove);
             // 
-            // panel16
+            // valueLabelStar
             // 
-            this.panel16.Controls.Add(this.label16);
-            this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel16.Location = new System.Drawing.Point(252, 222);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(79, 69);
-            this.panel16.TabIndex = 15;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label2.Location = new System.Drawing.Point(7, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 57);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "8";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Location = new System.Drawing.Point(7, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 57);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "7";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label3.Location = new System.Drawing.Point(7, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 57);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "9";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label4.Location = new System.Drawing.Point(17, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 57);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "/";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label5.Location = new System.Drawing.Point(7, 4);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 57);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "4";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label6.Location = new System.Drawing.Point(7, 4);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 57);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "5";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label7.Location = new System.Drawing.Point(7, 4);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 57);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "6";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label8.Location = new System.Drawing.Point(18, 3);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 57);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "*";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label9.Location = new System.Drawing.Point(3, 4);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 57);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "1";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label10.Location = new System.Drawing.Point(3, 4);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 57);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "2";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label11.Location = new System.Drawing.Point(3, 4);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 57);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "3";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label12.Location = new System.Drawing.Point(21, 3);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(41, 57);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "-";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label13.Location = new System.Drawing.Point(4, 3);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(53, 57);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "0";
-            this.label13.MouseLeave += new System.EventHandler(this.Label13_MouseLeave);
-            this.label13.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Label13_MouseMove);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label14.Location = new System.Drawing.Point(20, 5);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(36, 57);
-            this.label14.TabIndex = 0;
-            this.label14.Text = ".";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Cambria", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label15.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label15.Location = new System.Drawing.Point(1, 17);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(76, 37);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "DEL";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label16.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label16.Location = new System.Drawing.Point(15, 3);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(53, 57);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "+";
+            this.valueLabelStar.AutoSize = true;
+            this.valueLabelStar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.valueLabelStar.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.valueLabelStar.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.valueLabelStar.Location = new System.Drawing.Point(250, 74);
+            this.valueLabelStar.Name = "valueLabelStar";
+            this.valueLabelStar.Size = new System.Drawing.Size(77, 72);
+            this.valueLabelStar.TabIndex = 0;
+            this.valueLabelStar.Text = "*";
+            this.valueLabelStar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.valueLabelStar.Click += new System.EventHandler(this.Label_Click);
+            this.valueLabelStar.MouseLeave += new System.EventHandler(this.Label_MouseLeave);
+            this.valueLabelStar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Label_MouseMove);
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(12, 49);
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.ForeColor = System.Drawing.Color.Yellow;
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(294, 32);
+            this.textBox1.ReadOnly = true;
+            this.textBox1.ShortcutsEnabled = false;
+            this.textBox1.Size = new System.Drawing.Size(329, 83);
             this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "1";
+            this.textBox1.TabStop = false;
+            this.textBox1.Text = "0";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Calculator_KeyDown);
             // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(332, 415);
+            this.ClientSize = new System.Drawing.Size(331, 376);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -484,41 +397,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
             this.TopMost = true;
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Calculator_KeyDown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Calculator_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
-            this.panel13.ResumeLayout(false);
-            this.panel13.PerformLayout();
-            this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
-            this.panel15.ResumeLayout(false);
-            this.panel15.PerformLayout();
-            this.panel16.ResumeLayout(false);
-            this.panel16.PerformLayout();
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -528,38 +411,22 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label valueLabelPlus;
+        private System.Windows.Forms.Label valueLabelDel;
+        private System.Windows.Forms.Label valueLabelDot;
+        private System.Windows.Forms.Label valueLabel0;
+        private System.Windows.Forms.Label valueLabelMinus;
+        private System.Windows.Forms.Label valueLabel3;
+        private System.Windows.Forms.Label valueLabel2;
+        private System.Windows.Forms.Label valueLabel1;
+        private System.Windows.Forms.Label valueLabelStar;
+        private System.Windows.Forms.Label valueLabel6;
+        private System.Windows.Forms.Label valueLabel5;
+        private System.Windows.Forms.Label valueLabel4;
+        private System.Windows.Forms.Label valueLabelSlash;
+        private System.Windows.Forms.Label valueLabel9;
+        private System.Windows.Forms.Label valueLabel8;
+        private System.Windows.Forms.Label valueLabel7;
         private System.Windows.Forms.TextBox textBox1;
     }
 }
