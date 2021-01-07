@@ -9,7 +9,10 @@ namespace Rabotator.Small_utilities
     
     public partial class Calculator : Form
     {
-        
+        private decimal Number1 { get; set; }
+        private decimal Number2 { get; set; }
+        private decimal Result { get; set; }
+
         public Calculator()
         {
             InitializeComponent();
@@ -183,6 +186,7 @@ namespace Rabotator.Small_utilities
                     break;
             }
         }
+
         public void SimulationOfPressing(object obj)
         {
             Label l = (Label)obj;

@@ -16,8 +16,14 @@ namespace Rabotator
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            pageSetupDialog1.ShowDialog();
-
+            try
+            {
+                pageSetupDialog1.ShowDialog();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Принтер не установлен.","ERROR!");
+            }
         }
 
         private void Button3_Click(object sender, EventArgs e)
@@ -38,7 +44,16 @@ namespace Rabotator
                 printDocument1.DefaultPageSettings.Landscape = true;
             }
             // окно предпросмотра теряет фокус и порой скрывается после появления, разобраться почему
-            printPreviewDialog1.ShowDialog();
+            try
+            {
+                printPreviewDialog1.ShowDialog();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Принтер не установлен.", "ERROR!");
+            }
+            
             
         }
 
