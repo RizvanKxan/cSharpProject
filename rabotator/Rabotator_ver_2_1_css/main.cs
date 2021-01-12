@@ -37,7 +37,7 @@ namespace Rabotator
             t.SetToolTip(picVolume, "Объёмы Юск.");
             t.SetToolTip(picUsers, "Пользователи.");
             t.SetToolTip(picSkaner, "Смена номера MDT.");
-            t.SetToolTip(picBookmark, "Хранение.");
+            t.SetToolTip(picBookmark, "Утилиты.");
             t.SetToolTip(picBarcode, "Генерация штрих-кода.");
         }
 

@@ -90,6 +90,12 @@
     <Compile Include="Small_utilities\Calculator.Designer.cs">
       <DependentUpon>Calculator.cs</DependentUpon>
     </Compile>
+    <Compile Include="Small_utilities\EnglishExpressions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Small_utilities\EnglishExpressions.Designer.cs">
+      <DependentUpon>EnglishExpressions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilities.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Small_utilities\Calculator.resx">
       <DependentUpon>Calculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Small_utilities\EnglishExpressions.resx">
+      <DependentUpon>EnglishExpressions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Utilities.resx">
       <DependentUpon>Utilities.cs</DependentUpon>

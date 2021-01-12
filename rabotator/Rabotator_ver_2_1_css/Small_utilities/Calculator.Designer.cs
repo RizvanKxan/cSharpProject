@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calculator));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.valueLabelPlus = new System.Windows.Forms.Label();
             this.valueLabel7 = new System.Windows.Forms.Label();
@@ -48,22 +47,8 @@
             this.valueLabel1 = new System.Windows.Forms.Label();
             this.valueLabelStar = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Rabotator.Properties.Resources.Dark_exit_closethesession_close_6317;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(29, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.PictureBox1_MouseLeave);
-            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PictureBox1_MouseMove);
             // 
             // tableLayoutPanel1
             // 
@@ -91,7 +76,7 @@
             this.tableLayoutPanel1.Controls.Add(this.valueLabelStar, 3, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 82);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 93);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
@@ -99,8 +84,9 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(331, 294);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(336, 294);
             this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tableLayoutPanel1_MouseMove);
             // 
             // valueLabelPlus
             // 
@@ -108,9 +94,9 @@
             this.valueLabelPlus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.valueLabelPlus.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.valueLabelPlus.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.valueLabelPlus.Location = new System.Drawing.Point(250, 220);
+            this.valueLabelPlus.Location = new System.Drawing.Point(253, 220);
             this.valueLabelPlus.Name = "valueLabelPlus";
-            this.valueLabelPlus.Size = new System.Drawing.Size(77, 73);
+            this.valueLabelPlus.Size = new System.Drawing.Size(79, 73);
             this.valueLabelPlus.TabIndex = 0;
             this.valueLabelPlus.Text = "+";
             this.valueLabelPlus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -127,7 +113,7 @@
             this.valueLabel7.Location = new System.Drawing.Point(1, 1);
             this.valueLabel7.Margin = new System.Windows.Forms.Padding(0);
             this.valueLabel7.Name = "valueLabel7";
-            this.valueLabel7.Size = new System.Drawing.Size(81, 72);
+            this.valueLabel7.Size = new System.Drawing.Size(82, 72);
             this.valueLabel7.TabIndex = 0;
             this.valueLabel7.Text = "7";
             this.valueLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -141,9 +127,9 @@
             this.valueLabelDot.Dock = System.Windows.Forms.DockStyle.Fill;
             this.valueLabelDot.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.valueLabelDot.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.valueLabelDot.Location = new System.Drawing.Point(86, 220);
+            this.valueLabelDot.Location = new System.Drawing.Point(87, 220);
             this.valueLabelDot.Name = "valueLabelDot";
-            this.valueLabelDot.Size = new System.Drawing.Size(75, 73);
+            this.valueLabelDot.Size = new System.Drawing.Size(76, 73);
             this.valueLabelDot.TabIndex = 0;
             this.valueLabelDot.Text = ".";
             this.valueLabelDot.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -158,9 +144,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.valueLabelDel.Font = new System.Drawing.Font("Cambria", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.valueLabelDel.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.valueLabelDel.Location = new System.Drawing.Point(168, 220);
+            this.valueLabelDel.Location = new System.Drawing.Point(170, 220);
             this.valueLabelDel.Name = "valueLabelDel";
-            this.valueLabelDel.Size = new System.Drawing.Size(75, 73);
+            this.valueLabelDel.Size = new System.Drawing.Size(76, 73);
             this.valueLabelDel.TabIndex = 0;
             this.valueLabelDel.Text = "DEL";
             this.valueLabelDel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -174,9 +160,9 @@
             this.valueLabel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.valueLabel8.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.valueLabel8.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.valueLabel8.Location = new System.Drawing.Point(86, 1);
+            this.valueLabel8.Location = new System.Drawing.Point(87, 1);
             this.valueLabel8.Name = "valueLabel8";
-            this.valueLabel8.Size = new System.Drawing.Size(75, 72);
+            this.valueLabel8.Size = new System.Drawing.Size(76, 72);
             this.valueLabel8.TabIndex = 0;
             this.valueLabel8.Text = "8";
             this.valueLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -190,9 +176,9 @@
             this.valueLabel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.valueLabel9.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.valueLabel9.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.valueLabel9.Location = new System.Drawing.Point(168, 1);
+            this.valueLabel9.Location = new System.Drawing.Point(170, 1);
             this.valueLabel9.Name = "valueLabel9";
-            this.valueLabel9.Size = new System.Drawing.Size(75, 72);
+            this.valueLabel9.Size = new System.Drawing.Size(76, 72);
             this.valueLabel9.TabIndex = 0;
             this.valueLabel9.Text = "9";
             this.valueLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -208,7 +194,7 @@
             this.valueLabel0.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.valueLabel0.Location = new System.Drawing.Point(4, 220);
             this.valueLabel0.Name = "valueLabel0";
-            this.valueLabel0.Size = new System.Drawing.Size(75, 73);
+            this.valueLabel0.Size = new System.Drawing.Size(76, 73);
             this.valueLabel0.TabIndex = 0;
             this.valueLabel0.Text = "0";
             this.valueLabel0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -222,9 +208,9 @@
             this.valueLabelSlash.Dock = System.Windows.Forms.DockStyle.Fill;
             this.valueLabelSlash.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.valueLabelSlash.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.valueLabelSlash.Location = new System.Drawing.Point(250, 1);
+            this.valueLabelSlash.Location = new System.Drawing.Point(253, 1);
             this.valueLabelSlash.Name = "valueLabelSlash";
-            this.valueLabelSlash.Size = new System.Drawing.Size(77, 72);
+            this.valueLabelSlash.Size = new System.Drawing.Size(79, 72);
             this.valueLabelSlash.TabIndex = 0;
             this.valueLabelSlash.Text = "/";
             this.valueLabelSlash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -238,9 +224,9 @@
             this.valueLabelMinus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.valueLabelMinus.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.valueLabelMinus.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.valueLabelMinus.Location = new System.Drawing.Point(250, 147);
+            this.valueLabelMinus.Location = new System.Drawing.Point(253, 147);
             this.valueLabelMinus.Name = "valueLabelMinus";
-            this.valueLabelMinus.Size = new System.Drawing.Size(77, 72);
+            this.valueLabelMinus.Size = new System.Drawing.Size(79, 72);
             this.valueLabelMinus.TabIndex = 0;
             this.valueLabelMinus.Text = "-";
             this.valueLabelMinus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -256,7 +242,7 @@
             this.valueLabel4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.valueLabel4.Location = new System.Drawing.Point(4, 74);
             this.valueLabel4.Name = "valueLabel4";
-            this.valueLabel4.Size = new System.Drawing.Size(75, 72);
+            this.valueLabel4.Size = new System.Drawing.Size(76, 72);
             this.valueLabel4.TabIndex = 0;
             this.valueLabel4.Text = "4";
             this.valueLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -270,9 +256,9 @@
             this.valueLabel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.valueLabel3.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.valueLabel3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.valueLabel3.Location = new System.Drawing.Point(168, 147);
+            this.valueLabel3.Location = new System.Drawing.Point(170, 147);
             this.valueLabel3.Name = "valueLabel3";
-            this.valueLabel3.Size = new System.Drawing.Size(75, 72);
+            this.valueLabel3.Size = new System.Drawing.Size(76, 72);
             this.valueLabel3.TabIndex = 0;
             this.valueLabel3.Text = "3";
             this.valueLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -286,9 +272,9 @@
             this.valueLabel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.valueLabel5.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.valueLabel5.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.valueLabel5.Location = new System.Drawing.Point(86, 74);
+            this.valueLabel5.Location = new System.Drawing.Point(87, 74);
             this.valueLabel5.Name = "valueLabel5";
-            this.valueLabel5.Size = new System.Drawing.Size(75, 72);
+            this.valueLabel5.Size = new System.Drawing.Size(76, 72);
             this.valueLabel5.TabIndex = 0;
             this.valueLabel5.Text = "5";
             this.valueLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -302,9 +288,9 @@
             this.valueLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.valueLabel2.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.valueLabel2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.valueLabel2.Location = new System.Drawing.Point(86, 147);
+            this.valueLabel2.Location = new System.Drawing.Point(87, 147);
             this.valueLabel2.Name = "valueLabel2";
-            this.valueLabel2.Size = new System.Drawing.Size(75, 72);
+            this.valueLabel2.Size = new System.Drawing.Size(76, 72);
             this.valueLabel2.TabIndex = 0;
             this.valueLabel2.Text = "2";
             this.valueLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -318,9 +304,9 @@
             this.valueLabel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.valueLabel6.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.valueLabel6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.valueLabel6.Location = new System.Drawing.Point(168, 74);
+            this.valueLabel6.Location = new System.Drawing.Point(170, 74);
             this.valueLabel6.Name = "valueLabel6";
-            this.valueLabel6.Size = new System.Drawing.Size(75, 72);
+            this.valueLabel6.Size = new System.Drawing.Size(76, 72);
             this.valueLabel6.TabIndex = 0;
             this.valueLabel6.Text = "6";
             this.valueLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -336,7 +322,7 @@
             this.valueLabel1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.valueLabel1.Location = new System.Drawing.Point(4, 147);
             this.valueLabel1.Name = "valueLabel1";
-            this.valueLabel1.Size = new System.Drawing.Size(75, 72);
+            this.valueLabel1.Size = new System.Drawing.Size(76, 72);
             this.valueLabel1.TabIndex = 0;
             this.valueLabel1.Text = "1";
             this.valueLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -350,9 +336,9 @@
             this.valueLabelStar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.valueLabelStar.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.valueLabelStar.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.valueLabelStar.Location = new System.Drawing.Point(250, 74);
+            this.valueLabelStar.Location = new System.Drawing.Point(253, 74);
             this.valueLabelStar.Name = "valueLabelStar";
-            this.valueLabelStar.Size = new System.Drawing.Size(77, 72);
+            this.valueLabelStar.Size = new System.Drawing.Size(79, 72);
             this.valueLabelStar.TabIndex = 0;
             this.valueLabelStar.Text = "*";
             this.valueLabelStar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -364,14 +350,15 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.textBox1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Location = new System.Drawing.Point(0, 10);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.ShortcutsEnabled = false;
-            this.textBox1.Size = new System.Drawing.Size(329, 83);
+            this.textBox1.Size = new System.Drawing.Size(336, 83);
             this.textBox1.TabIndex = 2;
             this.textBox1.TabStop = false;
             this.textBox1.Text = "0";
@@ -384,8 +371,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(331, 376);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(336, 387);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -399,7 +385,6 @@
             this.TopMost = true;
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Calculator_KeyDown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Calculator_MouseDown);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -408,8 +393,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label valueLabelPlus;
         private System.Windows.Forms.Label valueLabelDel;

@@ -1,18 +1,16 @@
 ﻿using Rabotator.Properties;
 using System;
-using System.ComponentModel;
+using System.Data;
 using System.Threading;
 using System.Windows.Forms;
 
 namespace Rabotator.Small_utilities
 {
-    
+
     public partial class Calculator : Form
     {
-        private decimal Number1 { get; set; }
-        private decimal Number2 { get; set; }
-        private decimal Result { get; set; }
-
+        private string Result { get; set; }
+        // нет возможности написать несколько дробных чисел
         public Calculator()
         {
             InitializeComponent();
@@ -25,22 +23,6 @@ namespace Rabotator.Small_utilities
             Capture = false;
             Message m = Message.Create(Handle, 0xa1, new IntPtr(2), IntPtr.Zero);
             WndProc(ref m);
-        }
-
-        private void PictureBox1_Click(object sender, EventArgs e)
-        {
-            SlowShowAndCloseForm ss = new SlowShowAndCloseForm(this);
-            ss.Close();
-        }
-
-        private void PictureBox1_MouseMove(object sender, MouseEventArgs e)
-        {
-            pictureBox1.Image = Resources.exit_closethesession_close_6317;
-        }
-
-        private void PictureBox1_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox1.Image = Resources.Dark_exit_closethesession_close_6317;
         }
 
         private void Label_MouseMove(object sender, MouseEventArgs e)
@@ -66,7 +48,11 @@ namespace Rabotator.Small_utilities
             Label l = (Label)sender;
             if((l.Text == ".") || (l.Text == ","))
             {
-                if ((textBox1.Text.Contains(",")) || ((textBox1.Text.Contains(".")))) { }
+                if(textBox1.Text.Length == 0)
+                {
+                    textBox1.AppendText("0" + l.Text);
+                }
+                else if ((textBox1.Text.Contains(",")) || ((textBox1.Text.Contains(".")))) { }
                 else { textBox1.AppendText(l.Text); }
             }
             else if((l.Text == "/") || 
@@ -85,7 +71,7 @@ namespace Rabotator.Small_utilities
                         }
                         else
                         {
-                        textBox1.AppendText(l.Text);
+                            textBox1.AppendText(l.Text);
                         }
                     }
                 
@@ -95,7 +81,7 @@ namespace Rabotator.Small_utilities
 
         private void Calculator_KeyDown(object sender, KeyEventArgs e)
         {
-            if (textBox1.Text == "0") textBox1.Text = "";
+            //if (textBox1.Text == "0") textBox1.Text = "";
             Thread myThread = new Thread(new ParameterizedThreadStart(SimulationOfPressing));
             switch (e.KeyValue)
             {
@@ -184,6 +170,13 @@ namespace Rabotator.Small_utilities
                         textBox1.Refresh();
                     }
                     break;
+                case (char)Keys.Enter:
+                    Result = new DataTable().Compute(textBox1.Text, null).ToString();
+                    textBox1.Text = Result;
+                    break;
+                case (char)Keys.Escape:
+                    Close();
+                    break;
             }
         }
 
@@ -198,6 +191,13 @@ namespace Rabotator.Small_utilities
         private void ValueLabelDel_Click(object sender, EventArgs e)
         {
             textBox1.Text = "";
+        }
+
+        private void tableLayoutPanel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            Capture = false;
+            Message m = Message.Create(Handle, 0xa1, new IntPtr(2), IntPtr.Zero);
+            WndProc(ref m);
         }
     }
 }

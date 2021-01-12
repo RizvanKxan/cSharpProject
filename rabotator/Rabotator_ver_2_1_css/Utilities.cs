@@ -27,7 +27,20 @@ namespace Rabotator
             ss.Close();
         }
 
-       
+        private void Label_MouseMove(object sender, MouseEventArgs e)
+        {
+            Label l = (Label)sender;
+            l.ForeColor = System.Drawing.Color.FromArgb(12, 135, 50);
+            l.BackColor = System.Drawing.Color.FromArgb(10, 6, 49);
+        }
+
+        private void Label_MouseLeave(object sender, EventArgs e)
+        {
+            Label l = (Label)sender;
+            l.ForeColor = System.Drawing.Color.FromArgb(51, 153, 255);
+            l.BackColor = System.Drawing.Color.FromArgb(34, 36, 49);
+        }
+
 
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -63,7 +76,10 @@ namespace Rabotator
 
         private void Panel5_MouseClick(object sender, MouseEventArgs e)
         {
-
+            EnglishExpressions newForm = new EnglishExpressions();
+            newForm.Show();
+            SlowShowAndCloseForm ss = new SlowShowAndCloseForm(this);
+            ss.Close();
 
         }
 
