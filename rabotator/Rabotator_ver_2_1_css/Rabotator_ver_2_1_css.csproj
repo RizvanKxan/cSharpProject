@@ -96,6 +96,24 @@
     <Compile Include="Small_utilities\EnglishExpressions.Designer.cs">
       <DependentUpon>EnglishExpressions.cs</DependentUpon>
     </Compile>
+    <Compile Include="Small_utilities\TODOList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Small_utilities\TODOList.Designer.cs">
+      <DependentUpon>TODOList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Small_utilities\TODOListMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Small_utilities\TODOListMain.Designer.cs">
+      <DependentUpon>TODOListMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Small_utilities\TODOText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Small_utilities\TODOText.Designer.cs">
+      <DependentUpon>TODOText.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilities.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +163,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Small_utilities\EnglishExpressions.resx">
       <DependentUpon>EnglishExpressions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Small_utilities\TODOList.resx">
+      <DependentUpon>TODOList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Small_utilities\TODOListMain.resx">
+      <DependentUpon>TODOListMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Small_utilities\TODOText.resx">
+      <DependentUpon>TODOText.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Utilities.resx">
       <DependentUpon>Utilities.cs</DependentUpon>

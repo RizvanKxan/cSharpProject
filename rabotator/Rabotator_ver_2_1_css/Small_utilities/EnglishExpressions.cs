@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -10,7 +9,6 @@ namespace Rabotator.Small_utilities
     public partial class EnglishExpressions : Form
     {
         public const string pathData = @"Data.txt";
-        public Dictionary<int, string> data = new Dictionary<int, string>();
         public List<string> dataString = new List<string>();
         public EnglishExpressions()
         {
@@ -75,17 +73,5 @@ namespace Rabotator.Small_utilities
                 Close();
             }
         }
-    }
-
-    public class ExpressionAndTranslate
-    {
-        public string Expression { get; set; }
-        public string TranslateExpression { get; set; }
-        public Dictionary<string, string> ExpAndTrans;
-        public ExpressionAndTranslate(string Expression, string TranslateExpression)
-        {
-            this.Expression = Expression;
-            this.TranslateExpression = TranslateExpression;
-        } 
     }
 }

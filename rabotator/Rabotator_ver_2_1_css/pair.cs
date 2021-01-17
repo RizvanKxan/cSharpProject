@@ -42,9 +42,6 @@ namespace Rabotator
 
                 var test = new AutoCompleteStringCollection();
 
-               // listBox1.DataSource = listA;
-               // listBox2.DataSource = listB;
-               // listBox3.DataSource = listC;
                 List<string> listX = new List<string>();
                 listX.AddRange(listA);
                 listX.AddRange(listB);

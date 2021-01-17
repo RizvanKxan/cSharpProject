@@ -6,6 +6,7 @@ namespace Rabotator
     {
         public static bool orientationPageIsPortrait = false;
         public static PaperSize sizePage = new PaperSize("A4", 595, 842);
+        public static string TODOstring;
  
     }
 

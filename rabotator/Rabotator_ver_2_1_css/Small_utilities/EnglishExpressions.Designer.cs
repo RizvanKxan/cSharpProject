@@ -35,7 +35,7 @@
             // 
             // tmr1
             // 
-            this.tmr1.Interval = 5000;
+            this.tmr1.Interval = 7000;
             this.tmr1.Tick += new System.EventHandler(this.Tmr1_Tick);
             // 
             // label1
@@ -46,7 +46,7 @@
             this.label1.ForeColor = System.Drawing.Color.MintCream;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1094, 94);
+            this.label1.Size = new System.Drawing.Size(1094, 74);
             this.label1.TabIndex = 0;
             this.label1.Text = "English expressions.";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -58,13 +58,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(1094, 94);
+            this.ClientSize = new System.Drawing.Size(1094, 74);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EnglishExpressions";
             this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "EnglishExpressions";
+            this.TopMost = true;
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.EnglishExpressions_MouseDown);
             this.ResumeLayout(false);
 

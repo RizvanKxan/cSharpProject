@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Windows.Forms;
 
 namespace Rabotator
@@ -34,7 +35,7 @@ namespace Rabotator
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            printDocument1.DefaultPageSettings.PaperSize = Data.sizePage;
+            /*printDocument1.DefaultPageSettings.PaperSize = Data.sizePage;
             if(Data.orientationPageIsPortrait == true)
             {
                 printDocument1.DefaultPageSettings.Landscape = false;
@@ -42,7 +43,7 @@ namespace Rabotator
             else
             {
                 printDocument1.DefaultPageSettings.Landscape = true;
-            }
+            }*/
             // окно предпросмотра теряет фокус и порой скрывается после появления, разобраться почему
             try
             {
@@ -62,23 +63,24 @@ namespace Rabotator
             var bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             pictureBox1.DrawToBitmap(bmp, pictureBox1.ClientRectangle);
 
-            if(Data.sizePage.Width == 595)
+            /*if(Data.sizePage.Width == 595)
             {
-                e.Graphics.DrawImage(bmp, 100,100);
-                e.Graphics.DrawString(textBox1.Text,
+                e.Graphics.DrawImage(bmp, 200,200);*/
+                e.Graphics.DrawImage(bmp, new Point(1,1));
+               /* e.Graphics.DrawString(textBox1.Text,
                                       new Font("Arial", 8),
-                                      Brushes.Black, 105, 153);
+                                      Brushes.Black, 205, 253);
                 // придумать как выровнять текст-подпись по центру изображения
             }
             else
             {
                 e.Graphics.DrawImage(bmp,1,1,8,4);
-                e.Graphics.DrawString(textBox1.Text,
+                /*e.Graphics.DrawString(textBox1.Text,
                                       new Font("Arial", 0.5f),
                                       Brushes.Black,
                                       e.PageBounds.Width / 2 - e.Graphics.MeasureString(textBox1.Text, new Font("Arial", 0.5f)).Width / 2,
                                       4.9f);
-            }
+            }*/
         }
 
         private void Exit_Click(object sender, EventArgs e)
@@ -121,6 +123,15 @@ namespace Rabotator
                 Data.sizePage = new System.Drawing.Printing.PaperSize("Zebra", 6, 10);
                 Data.orientationPageIsPortrait = false;
             }
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Size = new Size(int.Parse(textBox3.Text), int.Parse(textBox4.Text));
+            
+            PaperSize pkSize = new PaperSize(textBox2.Text,int.Parse(textBox3.Text), int.Parse(textBox4.Text));
+            printDocument1.DefaultPageSettings.PaperSize = pkSize;
+
         }
     }
 }

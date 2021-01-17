@@ -41,12 +41,6 @@ namespace Rabotator
             l.BackColor = System.Drawing.Color.FromArgb(34, 36, 49);
         }
 
-
-        private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            System.Diagnostics.Process.Start("http://vk.com");
-        }
-
         private void Panel2_MouseClick(object sender, MouseEventArgs e)
         {
             Calculator newForm = new Calculator();
@@ -70,7 +64,10 @@ namespace Rabotator
 
         private void Panel4_MouseClick(object sender, MouseEventArgs e)
         {
-
+            TODOListMain newForm = new TODOListMain();
+            newForm.Show();
+            SlowShowAndCloseForm ss = new SlowShowAndCloseForm(this);
+            ss.Close();
 
         }
 
